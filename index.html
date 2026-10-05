@@ -29,7 +29,7 @@ select{font:inherit;font-size:14px;padding:11px 14px;border-radius:12px;border:1
 .chip{font:inherit;font-size:13px;font-weight:500;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:.15s}
 .chip:hover{border-color:var(--brand)}
 .chip[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
-.filters{padding-top:6px}
+.filters{padding-top:8px}
 .chips.collapsed{max-height:78px;overflow:hidden}
 .meta{display:flex;justify-content:space-between;align-items:center;margin:22px 0 14px;font-size:14px;color:var(--muted)}
 .link{background:none;border:0;font:inherit;font-size:14px;color:var(--brand);cursor:pointer;font-weight:500}
@@ -74,19 +74,9 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
   <p class="lede">Pick a domain or a theme, then open any card to explore the full site without leaving this page.</p>
 </div></header>
 
-<section class="controls"><div class="wrap">
-  <div class="row">
-    <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="q" type="search" placeholder="Search by name, domain or style" aria-label="Search templates"></label>
-    <select id="mode" aria-label="Filter by mode"><option value="">Light and dark</option><option>Light</option><option>Dark</option></select>
-    <select id="three" aria-label="Filter by 3D"><option value="">With or without 3D</option><option value="1">3D scene included</option><option value="0">No 3D</option></select>
-    <select id="sort" aria-label="Sort"><option value="num">Original order</option><option value="az">Name A to Z</option></select>
-  </div>
-</div></section>
 <section class="wrap filters">
   <div class="chips" id="domains" role="group" aria-label="Domain"><span class="lab">Domain</span></div>
-  <div class="chips collapsed" id="themes" role="group" aria-label="Theme"><span class="lab">Theme</span></div>
-  <button class="link" id="moreThemes" type="button" style="margin-top:8px">Show all themes</button>
+  <div class="chips" id="themes" role="group" aria-label="Theme"><span class="lab">Theme</span></div>
 </section>
 
 <main class="wrap">
@@ -125,11 +115,10 @@ fetch("templates.json").then(function(r){return r.json()}).then(function(d){
 function uniq(a){return a.filter(function(v,i){return a.indexOf(v)===i})}
 function buildChips(){
   var doms=uniq(data.map(function(t){return t.domain}));
-  var themes=uniq([].concat.apply([],data.map(function(t){return t.tags}))).sort();
   var D=$("#domains");
   [""].concat(doms).forEach(function(d){D.appendChild(chip(d||"All",function(b){state.domain=(state.domain===d||!d)?"":d;sync()},"d:"+d))});
   var T=$("#themes");
-  themes.forEach(function(t){T.appendChild(chip(t,function(){var i=state.themes.indexOf(t);i<0?state.themes.push(t):state.themes.splice(i,1);sync()},"t:"+t))});
+  ["Light","Dark"].forEach(function(t){T.appendChild(chip(t,function(){state.mode=state.mode===t?"":t;sync()},"t:"+t))});
 }
 function chip(label,fn,key){var b=document.createElement("button");b.className="chip";b.textContent=label;b.dataset.key=key;b.setAttribute("aria-pressed","false");b.onclick=fn;return b}
 function sync(){render();writeHash()}
@@ -149,12 +138,11 @@ function render(){
   list.forEach(function(t){g.appendChild(card(t))});
   if(!list.length)g.innerHTML='<div class="empty">No templates match these filters. Try clearing one.</div>';
   $("#count").textContent=list.length+" of "+data.length+" templates";
-  var active=state.q||state.domain||state.mode||state.three!==""||state.themes.length;
+  var active=state.domain||state.mode;
   $("#reset").hidden=!active;
   document.querySelectorAll(".chip").forEach(function(c){
-    var k=c.dataset.key,on=k==="d:"?!state.domain:k.indexOf("d:")===0?state.domain===k.slice(2):state.themes.indexOf(k.slice(2))>-1;
+    var k=c.dataset.key,on=k==="d:"?!state.domain:k.indexOf("d:")===0?state.domain===k.slice(2):state.mode===k.slice(2);
     c.setAttribute("aria-pressed",on)});
-  $("#q").value=state.q;$("#mode").value=state.mode;$("#three").value=state.three;$("#sort").value=state.sort;
 }
 function card(t){
   var b=document.createElement("button");b.className="card";b.type="button";
@@ -169,13 +157,8 @@ function card(t){
   return b;
 }
 
-$("#moreThemes").onclick=function(){var c=$("#themes").classList.toggle("collapsed");this.textContent=c?"Show all themes":"Show fewer themes"};
 /* filters wiring */
-$("#q").oninput=function(e){state.q=e.target.value;sync()};
-$("#mode").onchange=function(e){state.mode=e.target.value;sync()};
-$("#three").onchange=function(e){state.three=e.target.value;sync()};
-$("#sort").onchange=function(e){state.sort=e.target.value;sync()};
-$("#reset").onclick=function(){state={q:"",domain:"",themes:[],mode:"",three:"",sort:state.sort};sync()};
+$("#reset").onclick=function(){state={q:"",domain:"",themes:[],mode:"",three:"",sort:"num"};sync()};
 
 /* hash state, so filtered views can be shared */
 function writeHash(){
