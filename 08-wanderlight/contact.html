@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Begin an inquiry — Wanderlight</title>
+  <meta name="description" content="Begin a conversation with the Wanderlight team about a 2027 trip, a 2028 expression of interest, or a private commission." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark"></span>Wanderlight</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="trips.html">Trips</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Inquire</a>
+      </nav>
+      <a href="contact.html" class="nav-cta">Book a trip</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero container">
+      <span class="overline reveal">Begin an inquiry</span>
+      <h1 class="reveal reveal-d1" style="margin-top: 24px;">Tell us where the <span class="em">light</span> is taking you.</h1>
+      <p class="lead reveal reveal-d2" style="margin-top: 24px;">Every inquiry is read by either Anya or Diego, usually within twenty-four hours. We respond by email — the first conversation is on the phone, run by us, never an assistant. There is no hard sell. There is rarely a soft one.</p>
+    </section>
+
+    <section class="container" style="padding-bottom: clamp(48px, 7vw, 120px);">
+      <div class="contact-grid">
+        <div class="contact-side reveal">
+          <div>
+            <h3 class="italic" style="font-size: 1.625rem; font-family: 'Playfair Display', serif;">Studio.</h3>
+            <p style="margin-top: 8px;">
+              Rua das Janelas Verdes 17<br>
+              1200-690 Lisboa, Portugal
+            </p>
+            <p style="margin-top: 12px;">
+              <a href="mailto:journey@wanderlight.travel">journey@wanderlight.travel</a><br>
+              +351 21 555 0148
+            </p>
+          </div>
+
+          <div>
+            <h3 class="italic" style="font-size: 1.625rem; font-family: 'Playfair Display', serif;">Hours.</h3>
+            <p style="margin-top: 8px;">
+              Lisbon office · Monday — Friday, 10:00 — 18:00 WET<br>
+              Mexico City office · Monday — Friday, 9:00 — 17:00 CST<br>
+              Tokyo office · By appointment
+            </p>
+          </div>
+
+          <div>
+            <h3 class="italic" style="font-size: 1.625rem; font-family: 'Playfair Display', serif;">Press.</h3>
+            <p style="margin-top: 8px;">For press inquiries, write to <a href="mailto:press@wanderlight.travel">press@wanderlight.travel</a>. We respond within five working days.</p>
+          </div>
+
+          <div>
+            <h3 class="italic" style="font-size: 1.625rem; font-family: 'Playfair Display', serif;">Private commissions.</h3>
+            <p style="margin-top: 8px;">If you are considering a private trip for a family, a small group, or a corporate retreat, we design two or three of these a year. Write to <a href="mailto:private@wanderlight.travel">private@wanderlight.travel</a>.</p>
+          </div>
+        </div>
+
+        <div class="inquire reveal reveal-d1">
+          <h3>Send a message</h3>
+          <p>Everything optional except email. The more you share, the better we can prepare a real reply.</p>
+
+          <form class="form-group" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="firstname">First name</label>
+                <input id="firstname" name="firstname" type="text" autocomplete="given-name" required />
+              </div>
+              <div class="form-field">
+                <label for="lastname">Last name</label>
+                <input id="lastname" name="lastname" type="text" autocomplete="family-name" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="trip">Which trip</label>
+                <select id="trip" name="trip">
+                  <option>Not yet decided</option>
+                  <option>Himalayas — Above the cloud line</option>
+                  <option>Andes — A textile road</option>
+                  <option>Japan — Kumano Kodo pilgrim's walk</option>
+                  <option>Tanzania — The migration on foot</option>
+                  <option>Iceland — A house in the fjord</option>
+                  <option>Egypt — The White Desert</option>
+                  <option>Mexico — A mezcal harvest</option>
+                  <option>Italy — Val d'Orcia olive harvest</option>
+                  <option>Patagonia — An estancia, eighteen days</option>
+                  <option>2028 (preview) — not yet announced</option>
+                  <option>Private commission</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="party">How many traveling</label>
+                <select id="party" name="party">
+                  <option>Just me</option>
+                  <option>Two</option>
+                  <option>A small group (3–4)</option>
+                  <option>Private trip (5+)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="story">Tell us a little</label>
+              <textarea id="story" name="story" placeholder="What you're hoping for, what's drawing you to this region, what kind of travel makes you happy. The rougher the better."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send the message <span class="arrow">→</span></button>
+            <p style="color: rgba(255,247,235,0.5); font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 16px;">Reply within 24 hours · by Anya or Diego</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-mark italic">Wanderlight.</div>
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="brand"><span class="brand-mark"></span>Wanderlight</a>
+          <p style="margin-top: 12px; max-width: 36ch;">A travel collective designing slow, immersive expeditions across nine regions.</p>
+        </div>
+        <div><h5>Trips</h5><ul><li><a href="trips.html">2027 catalog</a></li><li>2028 (preview)</li><li>Private commissions</li><li>Group buyouts</li></ul></div>
+        <div><h5>Studio</h5><ul><li><a href="about.html">About</a></li><li>Hosts &amp; experts</li><li>Journal</li></ul></div>
+        <div><h5>Contact</h5><ul><li><a href="contact.html">Begin an inquiry</a></li><li>journey@wanderlight.travel</li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Wanderlight Lda. Lisbon · Mexico City · Tokyo.</span>
+        <span>Slow on purpose.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

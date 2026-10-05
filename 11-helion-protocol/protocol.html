@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Protocol — Helion</title>
+  <meta name="description" content="The Helion protocol: zk-verifiable compute, on-chain settlement, TEE execution, and a 70 / 25 / 5 economic split." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 28 28" fill="none">
+            <defs>
+              <linearGradient id="brand-grad" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#00FFE0" />
+                <stop offset="50%" stop-color="#FF38B4" />
+                <stop offset="100%" stop-color="#9A3FFF" />
+              </linearGradient>
+            </defs>
+            <path d="M14 2L2 8v12l12 6 12-6V8L14 2z" stroke="url(#brand-grad)" stroke-width="1.5" />
+            <path d="M14 14L8 11v6l6 3" stroke="url(#brand-grad)" stroke-width="1.5" stroke-linejoin="round" />
+            <path d="M14 14l6-3v6l-6 3" stroke="url(#brand-grad)" stroke-width="1.5" stroke-linejoin="round" />
+          </svg>
+        </span>
+        Helion
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="protocol.html" class="active">Protocol</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Apply</a>
+      </nav>
+      <a href="contact.html" class="nav-cta">Join testnet</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="protocol-hero container">
+      <span class="overline reveal">Protocol · v0.4 testnet</span>
+      <h1 class="reveal reveal-d1" style="margin-top: 16px;">A <span class="holo">verifiable compute layer</span> for the next generation of AI.</h1>
+      <p class="lead reveal reveal-d2" style="margin-top: 24px;">Helion is a permissionless network for AI compute. Built on a custom EVM-compatible L1 with sub-200ms zk-proof verification, TEE-secured execution, and stablecoin-denominated settlement. The protocol is audited by Trail of Bits and OpenZeppelin.</p>
+    </section>
+
+    <!-- ARCH 1: Network -->
+    <section class="arch container">
+      <div class="arch-grid">
+        <div class="arch-head reveal">
+          <span class="overline">01 / Network</span>
+          <h2 style="margin-top: 12px;">A purpose-built L1.</h2>
+          <p>Helion runs on a custom EVM-compatible chain optimized for compute settlement. 200ms blocks. zk-proof verifiers as first-class precompiles. Zero gas for proof submission.</p>
+        </div>
+        <div class="arch-table reveal reveal-d1">
+          <div class="arch-row">
+            <div class="arch-row-label">Chain<small>Custom L1, EVM-compatible</small></div>
+            <div class="arch-row-value holo">Helion L1 · OP-stack fork</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Block time</div>
+            <div class="arch-row-value">200 ms</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Throughput<small>Settled jobs, per block</small></div>
+            <div class="arch-row-value">~14,200</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Finality</div>
+            <div class="arch-row-value">2 blocks · 400ms</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Native token<small>For staking + slashing only</small></div>
+            <div class="arch-row-value">HEL</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Settlement asset</div>
+            <div class="arch-row-value">USDC · native</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCH 2: Verifiability -->
+    <section class="arch container">
+      <div class="arch-grid">
+        <div class="arch-head reveal">
+          <span class="overline">02 / Verifiability</span>
+          <h2 style="margin-top: 12px;">Proof-of-compute, not promise-of-compute.</h2>
+          <p>Every job is executed inside an Intel SGX or AMD SEV enclave and emits a zk-SNARK attesting to the input, model, and result hash. The proof verifies on-chain in &lt; 200 ms.</p>
+        </div>
+        <div class="arch-table reveal reveal-d1">
+          <div class="arch-row">
+            <div class="arch-row-label">Execution environment</div>
+            <div class="arch-row-value">Intel SGX · AMD SEV-SNP</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Proof system</div>
+            <div class="arch-row-value holo">Groth16 + SNARK pack</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Proof size</div>
+            <div class="arch-row-value">512 bytes</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Verification time<small>On Helion L1</small></div>
+            <div class="arch-row-value">&lt; 200 ms</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Workload attestation</div>
+            <div class="arch-row-value">Model hash + input commit</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Fraud window</div>
+            <div class="arch-row-value">6 blocks · 1.2 sec</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCH 3: Economic model -->
+    <section class="arch container">
+      <div class="arch-grid">
+        <div class="arch-head reveal">
+          <span class="overline">03 / Economic model</span>
+          <h2 style="margin-top: 12px;">Settlement, in plain English.</h2>
+          <p>Every job pays out in USDC. The protocol takes the smallest cut. Operators are slashed for misbehavior via staked HEL.</p>
+        </div>
+        <div class="arch-table reveal reveal-d1">
+          <div class="arch-row">
+            <div class="arch-row-label">Operator share<small>Per settled job</small></div>
+            <div class="arch-row-value holo">70%</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Orchestrator share</div>
+            <div class="arch-row-value">25%</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Protocol treasury</div>
+            <div class="arch-row-value">5%</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Operator stake<small>Minimum, in HEL</small></div>
+            <div class="arch-row-value">2,500 HEL</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Slashing<small>Failed proof / cheating</small></div>
+            <div class="arch-row-value">100% of stake</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Settlement frequency</div>
+            <div class="arch-row-value">Hourly · withdraw any time</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCH 4: Validators / orchestrators -->
+    <section class="arch container">
+      <div class="arch-grid">
+        <div class="arch-head reveal">
+          <span class="overline">04 / Orchestrators</span>
+          <h2 style="margin-top: 12px;">Routing &amp; reputation.</h2>
+          <p>Orchestrators match developer workloads to operator GPUs. They are paid for routing quality (latency, success rate). They are slashed for routing a job to a known-bad operator.</p>
+        </div>
+        <div class="arch-table reveal reveal-d1">
+          <div class="arch-row">
+            <div class="arch-row-label">Active orchestrators<small>Mainnet beta</small></div>
+            <div class="arch-row-value">112</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Orchestrator stake</div>
+            <div class="arch-row-value">100,000 HEL</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Routing fee</div>
+            <div class="arch-row-value">25% of job value</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Reputation system</div>
+            <div class="arch-row-value">EigenTrust + Sybil-resist</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Latency target<small>p95, job match</small></div>
+            <div class="arch-row-value">&lt; 80 ms</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Slashing<small>Bad routing</small></div>
+            <div class="arch-row-value">10% of stake</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCH 5: Hardware -->
+    <section class="arch container">
+      <div class="arch-grid">
+        <div class="arch-head reveal">
+          <span class="overline">05 / Supported hardware</span>
+          <h2 style="margin-top: 12px;">Nvidia &amp; AMD,<br>any tier.</h2>
+          <p>Any GPU with at least 8 GB of VRAM and an SGX/SEV-capable host CPU. The reputation system surfaces the best operators for each workload type.</p>
+        </div>
+        <div class="arch-table reveal reveal-d1">
+          <div class="arch-row">
+            <div class="arch-row-label">Consumer<small>Per-hour USDC, avg</small></div>
+            <div class="arch-row-value">RTX 4090 · $0.40 — $0.65</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Workstation</div>
+            <div class="arch-row-value">RTX 6000 Ada · $0.70 — $1.10</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Data center<small>Per-hour, A100 80G</small></div>
+            <div class="arch-row-value holo">A100 80G · $0.80 — $1.40</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">Hopper-class<small>Per-hour, H100 SXM</small></div>
+            <div class="arch-row-value">H100 SXM · $1.80 — $3.40</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">AMD MI300X</div>
+            <div class="arch-row-value">MI300X · $1.20 — $2.10</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-row-label">For comparison<small>AWS p4d, on-demand</small></div>
+            <div class="arch-row-value" style="color: var(--text-faint);">A100 · $3.06 / hr</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUDITS / SECURITY -->
+    <section class="section container">
+      <div class="section-head reveal">
+        <span class="overline">Audits &amp; security</span>
+        <h2 style="margin-top: 16px;">Audited by humans, <span class="em">not just CIs.</span></h2>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar reveal">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Trail of Bits<br>· 2024 &amp; 2025</h3>
+          <p>Two full-protocol audits, including the proof-system and L1 fork. 0 critical findings in the second audit. Both reports public.</p>
+        </article>
+        <article class="pillar reveal reveal-d1">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>OpenZeppelin<br>· tokenomics</h3>
+          <p>OZ audited the staking, slashing, and settlement contracts in Q3 2025. Two medium-severity findings, both addressed before mainnet.</p>
+        </article>
+        <article class="pillar reveal reveal-d2">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <h3>Bug bounty<br>· $2.5M</h3>
+          <p>$2.5M bounty hosted with Immunefi for critical findings against mainnet contracts. No critical claims paid out to date.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section container">
+      <div class="cta-band reveal">
+        <span class="overline" style="justify-content: center;">Get involved</span>
+        <h2 style="margin-top: 16px;">Read the protocol. <span class="em">Then ship one job.</span></h2>
+        <p>Whitepaper v0.4 is public. The SDK is on GitHub. Testnet credits ship within 24 hours of approval.</p>
+        <a href="contact.html" class="btn btn-primary">Apply for testnet <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-mark">HELION</div>
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand"><span class="brand-mark"><svg viewBox="0 0 28 28" fill="none"><defs><linearGradient id="brand-grad-2" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#00FFE0" /><stop offset="50%" stop-color="#FF38B4" /><stop offset="100%" stop-color="#9A3FFF" /></linearGradient></defs><path d="M14 2L2 8v12l12 6 12-6V8L14 2z" stroke="url(#brand-grad-2)" stroke-width="1.5" /></svg></span>Helion</a>
+          <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: 12px; max-width: 32ch;">Decentralized compute for AI training and inference.</p>
+        </div>
+        <div><h5>Protocol</h5><ul><li><a href="protocol.html">Architecture</a></li><li><a href="protocol.html">Tokenomics</a></li><li>Whitepaper · v0.4</li><li>Audits</li></ul></div>
+        <div><h5>Developers</h5><ul><li>Docs</li><li>SDK reference</li><li>GitHub</li><li>Bounties</li></ul></div>
+        <div><h5>Operators</h5><ul><li><a href="contact.html">Become an operator</a></li><li>Reputation scoring</li><li>Hardware spec</li></ul></div>
+        <div><h5>Community</h5><ul><li><a href="about.html">Manifesto</a></li><li>Discord · 11.4k</li><li>Twitter / X</li></ul></div>
+      </div>
+      <div class="footer-base">
+        <span>© <span id="year"></span> Helion Labs · Cayman Islands.</span>
+        <span>Audited · Trail of Bits, OpenZeppelin · 2025</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

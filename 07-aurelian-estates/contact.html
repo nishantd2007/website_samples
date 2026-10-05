@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inquire — Aurelian Estates</title>
+  <meta name="description" content="Inquire about a property in our catalog, request a private viewing, or ask about listing your own home." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..500;1,8..60,300..500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">Aurelian <small>Estates est. 2018</small></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="listings.html">Listings</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Inquire</a>
+      </nav>
+      <a href="contact.html" class="nav-cta">Private viewing</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero container">
+      <span class="overline reveal">Inquire</span>
+      <h1 class="reveal reveal-d1" style="margin-top: 24px;">The first conversation is <span class="italic">unhurried.</span></h1>
+      <p class="lead-serif reveal reveal-d2" style="margin-top: 24px;">Whether you're considering a property in our catalog, hoping to see something off-market, or thinking about listing a home of your own, Margaux reads every inquiry herself. Expect a reply within forty-eight hours.</p>
+    </section>
+
+    <section class="container" style="padding-bottom: clamp(48px, 7vw, 120px);">
+      <div class="contact-grid">
+        <div class="contact-side reveal">
+          <div>
+            <h3 class="italic" style="font-size: 1.625rem;">By telephone.</h3>
+            <p class="figure-tel">+1 631 555 0148</p>
+            <p style="margin-top: 8px; font-size: 0.875rem;">Monday — Friday · 9am — 6pm ET</p>
+          </div>
+          <div>
+            <h3 class="italic" style="font-size: 1.625rem;">Offices.</h3>
+            <p style="margin-top: 8px;">
+              <strong style="color: var(--ink);">East Hampton</strong> · 86 Newtown Lane, by appointment<br>
+              <strong style="color: var(--ink);">Rhinebeck</strong> · 4 East Market Street, by appointment<br>
+              <strong style="color: var(--ink);">Aspen</strong> · 233 East Cooper Avenue, by appointment
+            </p>
+          </div>
+          <div>
+            <h3 class="italic" style="font-size: 1.625rem;">By post.</h3>
+            <p style="margin-top: 8px;">
+              Aurelian Estates LLC<br>
+              Attn: Margaux Whitfield<br>
+              PO Box 1888<br>
+              East Hampton NY 11937
+            </p>
+          </div>
+          <div>
+            <h3 class="italic" style="font-size: 1.625rem;">Sellers.</h3>
+            <p style="margin-top: 8px;">If you are considering listing a property with us, please write to <strong style="color: var(--ink);">listing@aurelian.estate</strong>. We respond within seven days with an honest assessment of whether the brokerage is the right fit.</p>
+          </div>
+        </div>
+
+        <div class="inquire reveal reveal-d1">
+          <h3>Send a note</h3>
+          <p>Optional except email. The more you share, the better Margaux can prepare a reply.</p>
+
+          <form class="form-group" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="firstname">First name</label>
+                <input id="firstname" name="firstname" type="text" autocomplete="given-name" required />
+              </div>
+              <div class="form-field">
+                <label for="lastname">Last name</label>
+                <input id="lastname" name="lastname" type="text" autocomplete="family-name" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-field">
+              <label for="phone">Telephone (optional)</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="reason">I am writing about</label>
+                <select id="reason" name="reason">
+                  <option>A property in the catalog</option>
+                  <option>An off-market brief</option>
+                  <option>Listing a property of my own</option>
+                  <option>A general inquiry</option>
+                  <option>Press</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="property">Which property (if applicable)</label>
+                <select id="property" name="property">
+                  <option>Not yet decided</option>
+                  <option>01 · The Wainscott Farmhouse</option>
+                  <option>02 · Rose Hill (off-market)</option>
+                  <option>03 · The Castle Creek Cabin</option>
+                  <option>04 · The Sag Harbor Captain's House</option>
+                  <option>05 · The Catskill Stone Farmhouse</option>
+                  <option>06 · House on Lily Pond Lane</option>
+                  <option>07 · The Tivoli Greek Revival</option>
+                  <option>08 · West End Victorian, 1888 (off-market)</option>
+                  <option>09 · Oceanfront on Indian Wells</option>
+                  <option>10 · The Garrison Stone House</option>
+                  <option>11 · The Sagaponack Barn</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="message">Your note</label>
+              <textarea id="message" name="message" placeholder="What you're looking for, what you're hoping to know, when you'd like to visit. The longer the better."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send the note <span class="arrow">→</span></button>
+            <p style="color: var(--muted); font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 16px;">Reply within 48 hours · by Margaux herself</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-mark">Aurelian <span class="em">Estates</span></div>
+      <div class="footer-top">
+        <div>
+          <div class="brand" style="color: var(--cream);">Aurelian Estates</div>
+          <p style="margin-top: 12px; max-width: 36ch;">A boutique brokerage representing eight to twelve significant properties each year.</p>
+        </div>
+        <div><h5>Offices</h5><ul><li>East Hampton, NY</li><li>Rhinebeck, NY</li><li>Aspen, CO</li><li>By appointment · NYC</li></ul></div>
+        <div><h5>Pages</h5><ul><li><a href="listings.html">Catalog</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Inquire</a></li></ul></div>
+        <div><h5>Direct</h5><ul><li>+1 631 555 0148</li><li>brief@aurelian.estate</li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Aurelian Estates LLC. Licensed in NY &amp; CO.</span>
+        <span>2% of every fee · to history.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

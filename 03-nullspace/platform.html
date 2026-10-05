@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Platform — Nullspace</title>
+  <meta name="description" content="The Nullspace platform: distributed tracing, evals, replay, and cost intelligence — built for production AI agents." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark"></span>nullspace</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="platform.html" class="active">Platform</a>
+        <a href="about.html">Manifesto</a>
+        <a href="contact.html">Book demo</a>
+      </nav>
+      <a href="contact.html" class="nav-cta">Start trace →</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="platform-hero container">
+      <span class="overline reveal">Platform</span>
+      <h1 class="reveal reveal-d1" style="max-width: 18ch;">One platform. <span class="gradient-text">Four primitives.</span> Every agent.</h1>
+      <p class="lead reveal reveal-d2">Tracing, evals, replay, and cost intelligence — the four things you can't ship production AI without. All connected to the same trace tree, all queryable, all yours.</p>
+    </section>
+
+    <section class="container">
+      <article class="capability reveal">
+        <div class="capability-text">
+          <span class="overline">01 · Tracing</span>
+          <h2>Span-level traces, agent-aware.</h2>
+          <p>OpenTelemetry-compatible distributed tracing built for agent topologies — not microservices. Sub-agents, tool calls, retries, model fallbacks, all rendered as a flame graph you can click into.</p>
+          <ul>
+            <li>One import, zero config — auto-instruments every LLM call</li>
+            <li>Span attributes for prompts, tools, models, tokens, cost</li>
+            <li>OTLP-compatible — export to Datadog, Honeycomb, Grafana</li>
+            <li>Streaming and async-friendly</li>
+          </ul>
+        </div>
+        <div class="capability-visual">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--text-muted); width: 100%;">
+            <div style="margin-bottom: 12px; color: var(--text);">▼ trace · 0x7f3a..b21d <span style="color: var(--green); float: right;">1.24s</span></div>
+            <div style="padding-left: 12px; border-left: 1px solid var(--border); display: grid; gap: 6px;">
+              <div>├─ supervisor.route() <span style="color: var(--text-faint); float: right;">120ms</span></div>
+              <div>├─ retriever.search() <span style="color: var(--text-faint); float: right;">340ms</span></div>
+              <div>├─ <span style="color: var(--green);">▼ writer.draft()</span> <span style="color: var(--text-faint); float: right;">640ms</span></div>
+              <div style="padding-left: 16px;">│ ├─ openai.chat()  <span style="color: var(--text-faint); float: right;">580ms · $0.014</span></div>
+              <div style="padding-left: 16px;">│ └─ tool.format()  <span style="color: var(--text-faint); float: right;">60ms</span></div>
+              <div>└─ critic.review() <span style="color: var(--magenta); float: right;">130ms · retry 2</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="capability reveal">
+        <div class="capability-text">
+          <span class="overline">02 · Evals</span>
+          <h2>Evals as a deploy gate.</h2>
+          <p>Define your golden conversations once. Run them on every commit. Block deploys when accuracy on your eval set drops below your threshold. Move from "vibes" to a real CI signal.</p>
+          <ul>
+            <li>Golden sets versioned with your code</li>
+            <li>LLM-as-judge with explainable scoring</li>
+            <li>Regression diff between two model versions</li>
+            <li>GitHub status check — pass / fail per PR</li>
+          </ul>
+        </div>
+        <div class="capability-visual">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; width: 100%;">
+            <div style="color: var(--text); margin-bottom: 16px;">PR #847 · gpt-4o → claude-3.5</div>
+            <div style="display: grid; gap: 10px;">
+              <div style="display: flex; justify-content: space-between; padding: 10px 12px; background: rgba(0, 245, 160, 0.08); border-radius: 6px; border-left: 2px solid var(--green);">
+                <span style="color: var(--text);">refund_flow</span><span style="color: var(--green);">98% ✓</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 10px 12px; background: rgba(0, 245, 160, 0.08); border-radius: 6px; border-left: 2px solid var(--green);">
+                <span style="color: var(--text);">tool_select</span><span style="color: var(--green);">94% ✓</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 10px 12px; background: rgba(255, 79, 139, 0.08); border-radius: 6px; border-left: 2px solid var(--magenta);">
+                <span style="color: var(--text);">multi_turn</span><span style="color: var(--magenta);">71% ✗ regression</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 10px 12px; background: rgba(0, 245, 160, 0.08); border-radius: 6px; border-left: 2px solid var(--green);">
+                <span style="color: var(--text);">refusals</span><span style="color: var(--green);">100% ✓</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="capability reveal">
+        <div class="capability-text">
+          <span class="overline">03 · Replay</span>
+          <h2>Replay any conversation.<br>Step through every decision.</h2>
+          <p>Click any trace. Re-run it with a different prompt, a different model, a different toolset. Watch the agent's reasoning step by step. See exactly where the wheels fell off.</p>
+          <ul>
+            <li>Deterministic replay — same inputs, same outputs</li>
+            <li>Side-by-side comparison: original vs. fixed</li>
+            <li>Edit prompts inline and re-run</li>
+            <li>Share replay links with teammates</li>
+          </ul>
+        </div>
+        <div class="capability-visual">
+          <div style="text-align: center; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem;">
+            <div style="font-size: 4rem; line-height: 1; color: var(--green); margin-bottom: 12px;">⏮</div>
+            <div style="color: var(--text);">replay.run()</div>
+            <div style="margin-top: 16px; font-size: 0.75rem;">step 14 / 23 · decision: route → writer</div>
+            <div style="margin-top: 8px; font-size: 0.75rem; color: var(--text-faint);">tokens: 482 in / 117 out · $0.0091</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="capability reveal">
+        <div class="capability-text">
+          <span class="overline">04 · Cost intel</span>
+          <h2>Know what every conversation costs.</h2>
+          <p>Per-tenant cost attribution. P99 cost by route. Why one user's request burned $1.20 in tokens. Budget caps that page someone before they trip them.</p>
+          <ul>
+            <li>Cost per task, per user, per route, per model</li>
+            <li>Budget alerts via Slack / PagerDuty</li>
+            <li>Outlier detection — flag the 100x cost runs</li>
+            <li>Forecast spend by week, month, customer cohort</li>
+          </ul>
+        </div>
+        <div class="capability-visual">
+          <div style="width: 100%; font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem;">
+            <div style="color: var(--text); margin-bottom: 16px;">cost by route · last 7d</div>
+            <div style="display: grid; gap: 10px;">
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>/draft</span><span style="color: var(--green);">$2,418</span></div>
+                <div style="height: 6px; background: var(--border); border-radius: 3px; overflow: hidden;"><div style="width: 86%; height: 100%; background: var(--green);"></div></div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>/search</span><span style="color: var(--cyan);">$1,104</span></div>
+                <div style="height: 6px; background: var(--border); border-radius: 3px; overflow: hidden;"><div style="width: 42%; height: 100%; background: var(--cyan);"></div></div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>/summarize</span><span style="color: var(--amber);">$708</span></div>
+                <div style="height: 6px; background: var(--border); border-radius: 3px; overflow: hidden;"><div style="width: 28%; height: 100%; background: var(--amber);"></div></div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>/refund</span><span style="color: var(--magenta);">$412 · outlier</span></div>
+                <div style="height: 6px; background: var(--border); border-radius: 3px; overflow: hidden;"><div style="width: 16%; height: 100%; background: var(--magenta);"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section container">
+      <div class="section-head center reveal">
+        <span class="overline" style="justify-content: center;">Pricing</span>
+        <h2>Free up to 100k spans / month.</h2>
+        <p class="lead" style="margin: 16px auto 0;">Linear pricing after that. No per-seat tax, no enterprise tier paywall. Self-hosted and dedicated cloud available.</p>
+      </div>
+      <div class="features" style="grid-template-columns: repeat(3, 1fr);">
+        <article class="feature reveal" style="text-align: left;">
+          <h3>Hobbyist</h3>
+          <div style="font-size: 2.5rem; font-weight: 400; margin: 20px 0 8px; font-family: 'JetBrains Mono', monospace;">$0</div>
+          <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px;">100k spans · 7d retention</p>
+          <p>For solo builders and side projects. No card required.</p>
+        </article>
+        <article class="feature reveal reveal-d1" style="text-align: left; background: var(--bg-elev); border: 1px solid var(--green);">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; padding: 4px 10px; background: var(--green); color: var(--bg); border-radius: 4px; letter-spacing: 0.12em; text-transform: uppercase;">Team</span>
+          <h3 style="margin-top: 16px;">Team</h3>
+          <div style="font-size: 2.5rem; font-weight: 400; margin: 20px 0 8px; font-family: 'JetBrains Mono', monospace;">$0.0006<span style="font-size: 0.875rem; color: var(--text-muted);">/span</span></div>
+          <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px;">90d retention · unlimited seats</p>
+          <p>For production agents. Includes evals, replay, and cost intel.</p>
+        </article>
+        <article class="feature reveal reveal-d2" style="text-align: left;">
+          <h3>Enterprise</h3>
+          <div style="font-size: 2.5rem; font-weight: 400; margin: 20px 0 8px; font-family: 'JetBrains Mono', monospace;">Custom</div>
+          <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px;">VPC · 2yr retention · SAML</p>
+          <p>Self-hosted, dedicated cloud, or air-gapped. SOC 2 + HIPAA available.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="cta-band reveal">
+        <h2 class="gradient-text">90 seconds to your first trace.</h2>
+        <p>Drop one import. Run your agent once. See the trace in your dashboard. No credit card.</p>
+        <a href="contact.html" class="btn btn-primary">Book a demo <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand"><span class="brand-mark"></span>nullspace</div>
+          <p style="color: var(--text-muted); margin-top: 12px; max-width: 32ch; font-size: 0.9375rem;">Runtime intelligence for agentic AI. Made in Brooklyn &amp; Lisbon.</p>
+        </div>
+        <div><h5>Product</h5><ul><li><a href="platform.html">Platform</a></li><li><a href="platform.html">Pricing</a></li><li>Changelog</li><li>Status</li></ul></div>
+        <div><h5>Developers</h5><ul><li>Docs</li><li>SDK reference</li><li>OTLP exporter</li><li>GitHub</li></ul></div>
+        <div><h5>Company</h5><ul><li><a href="about.html">Manifesto</a></li><li>Careers · 6</li><li>Security</li><li>Press</li></ul></div>
+        <div><h5>Contact</h5><ul><li><a href="contact.html">Book a demo</a></li><li>hi@nullspace.dev</li><li>Twitter / X</li></ul></div>
+      </div>
+      <div class="footer-base">
+        <span>© <span id="year"></span> Nullspace Labs Inc.</span>
+        <span>SOC 2 Type II · ISO 27001 in progress</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

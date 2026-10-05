@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manifesto — Nullspace</title>
+  <meta name="description" content="Why we're building observability for AI agents — and why we think the next decade of infra looks nothing like the last." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark"></span>nullspace</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="platform.html">Platform</a>
+        <a href="about.html" class="active">Manifesto</a>
+        <a href="contact.html">Book demo</a>
+      </nav>
+      <a href="contact.html" class="nav-cta">Start trace →</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="manifesto-hero container">
+      <span class="overline reveal">Manifesto</span>
+      <h1 class="reveal reveal-d1" style="max-width: 18ch; margin-inline: auto;">The next decade of infra <span class="gradient-text">looks nothing</span> like the last.</h1>
+    </section>
+
+    <section class="container">
+      <div class="manifesto reveal">
+        <p>In 2024 we left jobs at Datadog and Stripe to chase a single observation: <strong>the AI agents people are putting into production are running in the dark</strong>. There is no stack trace. There is no log line that means anything. A request leaves the user, hits seven LLM calls, three tool invocations, two silent retries, one failed JSON parse — and the only signal you get back is that the answer was wrong, sometimes.</p>
+        <p>Traditional observability was built for deterministic systems. Microservices that returned the same answer when you replayed the request. AI agents are stochastic, expensive, non-local, and increasingly autonomous. The tools we built between 2010 and 2022 do not work.</p>
+        <p>We believe the next decade of platform engineering will be defined by a new question: <strong>how do you operate a system that thinks?</strong> Tracing for agents. Evals as a deploy gate. Replay as a debugger. Cost as a first-class signal. Not after the fact — at the moment the agent is making the decision.</p>
+        <p>Nullspace is our attempt at that platform. We are radically open about how it works (we publish our schema, our OTLP exporter is MIT, our self-hosted runtime is available), and equally opinionated about how it should be used. We will not ship a feature that makes it easier to <em>hide</em> what your agent is doing. Every line of the product is built around exposing it.</p>
+        <p>We are six people. We are profitable. We will stay small for as long as we can afford to.</p>
+        <p style="color: var(--text); margin-top: 32px; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem;">— Kai &amp; Lena, Brooklyn / Lisbon, April 2024</p>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section container">
+      <div class="section-head reveal">
+        <span class="overline">The team</span>
+        <h2>Six people. A lot of opinions.</h2>
+      </div>
+      <div class="team">
+        <article class="member reveal">
+          <div class="member-avatar">KR</div>
+          <div class="member-name">Kai Reyes</div>
+          <div class="member-role">Co-founder, CEO</div>
+          <div class="member-prev">prev. Datadog · MIT</div>
+        </article>
+        <article class="member reveal reveal-d1">
+          <div class="member-avatar">LP</div>
+          <div class="member-name">Lena Park</div>
+          <div class="member-role">Co-founder, CTO</div>
+          <div class="member-prev">prev. Stripe Infra · Waterloo</div>
+        </article>
+        <article class="member reveal reveal-d2">
+          <div class="member-avatar">SK</div>
+          <div class="member-name">Selene Khoury</div>
+          <div class="member-role">Founding eng — runtime</div>
+          <div class="member-prev">prev. Vercel · Lisboa</div>
+        </article>
+        <article class="member reveal reveal-d3">
+          <div class="member-avatar">JM</div>
+          <div class="member-name">Jules Martin</div>
+          <div class="member-role">Founding eng — frontend</div>
+          <div class="member-prev">prev. Linear · NYC</div>
+        </article>
+        <article class="member reveal">
+          <div class="member-avatar">AT</div>
+          <div class="member-name">Anand Tiwari</div>
+          <div class="member-role">Founding eng — SDKs</div>
+          <div class="member-prev">prev. Anthropic · SF</div>
+        </article>
+        <article class="member reveal reveal-d1">
+          <div class="member-avatar">MO</div>
+          <div class="member-name">Maya Okafor</div>
+          <div class="member-role">Founding eng — evals</div>
+          <div class="member-prev">prev. Hugging Face · Paris</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Principles -->
+    <section class="section container">
+      <div class="section-head reveal">
+        <span class="overline">What we believe</span>
+        <h2>Eight non-negotiables.</h2>
+      </div>
+      <div class="features">
+        <article class="feature reveal">
+          <h3 style="color: var(--green); font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px;">01</h3>
+          <h3 style="font-size: 1.25rem;">Your data is yours</h3>
+          <p>Traces are exportable to OTLP at any time. We will never hold your data hostage.</p>
+        </article>
+        <article class="feature reveal reveal-d1">
+          <h3 style="color: var(--green); font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px;">02</h3>
+          <h3 style="font-size: 1.25rem;">SDK first, dashboard second</h3>
+          <p>If we can't make the SDK feel right in 90 seconds, the dashboard doesn't matter.</p>
+        </article>
+        <article class="feature reveal reveal-d2">
+          <h3 style="color: var(--green); font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px;">03</h3>
+          <h3 style="font-size: 1.25rem;">Show the prompt</h3>
+          <p>Never hide what was sent to the model. Privacy controls live in the SDK, not in the UI.</p>
+        </article>
+        <article class="feature reveal">
+          <h3 style="color: var(--green); font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px;">04</h3>
+          <h3 style="font-size: 1.25rem;">No vendor lock-in</h3>
+          <p>OpenTelemetry schema. Standard exporters. Self-hosting available from day one.</p>
+        </article>
+        <article class="feature reveal reveal-d1">
+          <h3 style="color: var(--green); font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px;">05</h3>
+          <h3 style="font-size: 1.25rem;">Per-seat pricing is a tax</h3>
+          <p>You pay for spans, not for the number of people who want to read them.</p>
+        </article>
+        <article class="feature reveal reveal-d2">
+          <h3 style="color: var(--green); font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px;">06</h3>
+          <h3 style="font-size: 1.25rem;">Eval as CI</h3>
+          <p>Regressions on the golden set block the deploy. No exceptions. No "I'll fix it after."</p>
+        </article>
+        <article class="feature reveal">
+          <h3 style="color: var(--green); font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px;">07</h3>
+          <h3 style="font-size: 1.25rem;">Sane defaults, always</h3>
+          <p>If the default config is wrong, that's our bug. Configuration is not a feature.</p>
+        </article>
+        <article class="feature reveal reveal-d1">
+          <h3 style="color: var(--green); font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px;">08</h3>
+          <h3 style="font-size: 1.25rem;">Stay small</h3>
+          <p>Twelve people, max. The day we hit thirteen is the day we stop being good at this.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand"><span class="brand-mark"></span>nullspace</div>
+          <p style="color: var(--text-muted); margin-top: 12px; max-width: 32ch; font-size: 0.9375rem;">Runtime intelligence for agentic AI. Made in Brooklyn &amp; Lisbon.</p>
+        </div>
+        <div><h5>Product</h5><ul><li><a href="platform.html">Platform</a></li><li><a href="platform.html">Pricing</a></li><li>Changelog</li><li>Status</li></ul></div>
+        <div><h5>Developers</h5><ul><li>Docs</li><li>SDK reference</li><li>OTLP exporter</li><li>GitHub</li></ul></div>
+        <div><h5>Company</h5><ul><li><a href="about.html">Manifesto</a></li><li>Careers · 6</li><li>Security</li><li>Press</li></ul></div>
+        <div><h5>Contact</h5><ul><li><a href="contact.html">Book a demo</a></li><li>hi@nullspace.dev</li><li>Twitter / X</li></ul></div>
+      </div>
+      <div class="footer-base">
+        <span>© <span id="year"></span> Nullspace Labs Inc.</span>
+        <span>SOC 2 Type II · ISO 27001 in progress</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

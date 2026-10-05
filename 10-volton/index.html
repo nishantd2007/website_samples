@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volton — Electric, with a soul.</title>
+  <meta name="description" content="A 99-car limited-edition electric grand tourer, hand-assembled in Stuttgart. 1,200 hp, 480 km range, an acoustic engine voice mapped from a 1962 DB4." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark"></span>
+        Volton
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" class="active">Volton</a>
+        <a href="the-car.html">The Car</a>
+        <a href="about.html">Manifesto</a>
+        <a href="contact.html">Reserve</a>
+      </nav>
+      <a href="contact.html" class="nav-cta">Reserve · 28 left</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div id="hero-canvas" class="hero-canvas" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div>
+          <span class="hero-tag"><span class="pill">99 / 4 yrs</span> Reservations open · 28 remaining</span>
+        </div>
+
+        <div>
+          <h1 class="hero-display">
+            Electric.<br>
+            With a <span class="em">soul.</span>
+          </h1>
+        </div>
+
+        <div class="hero-bottom">
+          <p class="hero-pitch">A 99-car limited-edition electric grand tourer. Hand-assembled in Stuttgart by twelve people. First deliveries Q4 2027. The acoustic signature is mapped from a 1962 Aston Martin DB4.</p>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary">Reserve your allocation <span class="arrow">→</span></a>
+            <a href="the-car.html" class="btn btn-ghost">Read the spec</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECS STRIP -->
+    <section class="specs-strip">
+      <div class="container">
+        <div class="specs-row">
+          <div class="spec">
+            <span class="spec-label">Power</span>
+            <div class="spec-value">1,200<span class="spec-unit">hp</span></div>
+          </div>
+          <div class="spec">
+            <span class="spec-label">0 — 100 km/h</span>
+            <div class="spec-value">1.8<span class="spec-unit">sec</span></div>
+          </div>
+          <div class="spec">
+            <span class="spec-label">Range · WLTP</span>
+            <div class="spec-value">480<span class="spec-unit">km</span></div>
+          </div>
+          <div class="spec">
+            <span class="spec-label">Allocation</span>
+            <div class="spec-value">99<span class="spec-unit">vehicles</span></div>
+          </div>
+          <div class="spec">
+            <span class="spec-label">From</span>
+            <div class="spec-value">$1.4<span class="spec-unit">M</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE VOICE — signature feature -->
+    <section class="section container">
+      <div class="section-head reveal">
+        <span class="overline">Signature feature · The Voice</span>
+        <h2 style="margin-top: 16px;">A 1962 DB4, <span class="em">re-recorded</span> for electric.</h2>
+      </div>
+
+      <div class="voice-section">
+        <div class="voice-text reveal">
+          <p>Electric cars are quiet — to the point of soulless. Volton's powertrain is paired with a closed-circuit acoustic system: <strong>two microphones, four bone-conduction transducers, and a generative model trained on a 1962 Aston Martin DB4 GT.</strong></p>
+          <p>The "voice" responds in real time to throttle position, motor torque, and chassis pitch — and it is not piped through speakers. It is conducted through the chassis itself, so the cabin <em>feels</em> the way an internal combustion grand tourer used to feel, without producing any external sound.</p>
+          <p>The car is silent to the street. It is alive to its driver.</p>
+          <a href="the-car.html" class="btn btn-ghost" style="margin-top: 24px;">How it works <span class="arrow">→</span></a>
+        </div>
+
+        <div class="voice-visual reveal reveal-d1">
+          <span class="voice-meta">DB4 · 1962 · revs 4,800</span>
+          <div class="waveform"></div>
+          <div class="voice-meta-bottom">
+            <span>SAMPLE / 003</span>
+            <span>0.94 LIVE</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIGURATOR PREVIEW -->
+    <section class="section container">
+      <div class="section-head reveal">
+        <span class="overline">Configurator · preview</span>
+        <h2 style="margin-top: 16px;">Five exterior colors. <span class="em">All hand-painted.</span></h2>
+      </div>
+
+      <div class="config reveal">
+        <div class="config-visual">
+          <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1600&q=85" alt="Volton One in Carbon — front three-quarter view" />
+        </div>
+        <div class="config-info">
+          <h3>Carbon, default.</h3>
+          <p>Twenty coats of hand-laid carbon-black pigment with a clear ceramic finish. Hand-flatted between coats. Forty hours of labor per vehicle.</p>
+
+          <div class="swatches">
+            <span class="swatch s-1 active" title="Carbon"></span>
+            <span class="swatch s-2" title="Storm"></span>
+            <span class="swatch s-3" title="Silver"></span>
+            <span class="swatch s-4" title="Bronze"></span>
+            <span class="swatch s-5" title="Voltage"></span>
+          </div>
+
+          <div class="config-list">
+            <div><span>Paint hours</span><strong>40 hrs</strong></div>
+            <div><span>Layers</span><strong>20 coats</strong></div>
+            <div><span>Finish</span><strong>Hand-flatted ceramic</strong></div>
+            <div><span>Customization</span><strong>By request</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKSHOP BAND -->
+    <section class="workshop">
+      <div class="workshop-image">
+        <img src="https://images.unsplash.com/photo-1547038577-da80abbc4f19?auto=format&fit=crop&w=2000&q=85" alt="The Volton workshop in Stuttgart — twelve people, four bays, low light" />
+      </div>
+      <div class="workshop-content container">
+        <span class="overline reveal" style="justify-content: center;">The workshop · Stuttgart</span>
+        <h2 class="reveal reveal-d1" style="margin-top: 16px;">Twelve people. Four bays. <span class="gradient-text">Twenty-five vehicles a year.</span></h2>
+        <p class="reveal reveal-d2">Each Volton One spends eight weeks in the Stuttgart workshop. Eight hands per vehicle. The carbon monocoque is laid up by Henrik, the same engineer who built the 2002 Carrera GT chassis. The motor wiring is hand-soldered by Sayid, who came to us from Pininfarina.</p>
+        <a href="about.html" class="btn reveal reveal-d3" style="margin-top: 40px;">Read the manifesto <span class="arrow">→</span></a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section container" style="text-align: center;">
+      <span class="overline reveal" style="justify-content: center;">Reserve</span>
+      <h2 class="reveal reveal-d1" style="margin-top: 16px; max-width: 22ch; margin-inline: auto;">Twenty-eight allocations remain. <span class="em">First deliveries 2027.</span></h2>
+      <p class="lead reveal reveal-d2" style="margin: 32px auto 40px;">A $25,000 fully refundable deposit holds your place in the build queue. Final allocation, color, and interior are configured with our team in Stuttgart over a one-day visit.</p>
+      <a href="contact.html" class="btn btn-primary reveal reveal-d3">Begin a reservation <span class="arrow">→</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-mark">VOLTON</div>
+
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand">
+            <span class="brand-mark"></span>
+            Volton
+          </a>
+          <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: 12px; max-width: 32ch;">A 99-car limited-edition electric grand tourer. Hand-assembled in Stuttgart. Founded 2022 in Zurich.</p>
+        </div>
+        <div>
+          <h5>The Car</h5>
+          <ul>
+            <li><a href="the-car.html">Specification</a></li>
+            <li><a href="the-car.html">Powertrain</a></li>
+            <li><a href="the-car.html">The Voice</a></li>
+            <li><a href="the-car.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">Manifesto</a></li>
+            <li>Workshop · Stuttgart</li>
+            <li>Press</li>
+            <li>Careers · 4</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Showrooms</h5>
+          <ul>
+            <li>Zurich · Bahnhofstrasse</li>
+            <li>Stuttgart · by appt.</li>
+            <li>NYC · Tribeca</li>
+            <li>LA · Hancock Park</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Reserve</h5>
+          <ul>
+            <li><a href="contact.html">Begin a reservation</a></li>
+            <li>reservations@volton.car</li>
+            <li>+41 44 555 0148</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <span>© <span id="year"></span> Volton AG · Zurich, Switzerland.</span>
+        <span>99 / 4 years · Electric, with a soul.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

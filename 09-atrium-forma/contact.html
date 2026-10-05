@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact &amp; commissions — Atrium Forma</title>
+  <meta name="description" content="Two studios: Antwerp and Kyoto. Three commissions a year. Begin with an unhurried first letter." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">Atrium Forma <small>Antwerp · Kyoto</small></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Studio</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="nav-meta">14 / built · 3 / underway</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero container">
+      <div class="contact-hero-grid">
+        <div class="label">
+          <span class="label-mono reveal">Contact &amp; commissions</span>
+        </div>
+        <div class="heading">
+          <h1 class="reveal reveal-d1">Two studios. <span style="color: var(--hairline);">One hour</span> a day when both are awake.</h1>
+        </div>
+      </div>
+
+      <div class="studios">
+        <article class="studio reveal">
+          <div class="studio-city">Antwerp</div>
+          <p class="studio-address">
+            Lange Gasthuisstraat 4<br>
+            2000 Antwerpen<br>
+            Belgium
+          </p>
+          <p class="studio-contact">
+            +32 3 555 0148<br>
+            <a href="mailto:antwerp@atriumforma.studio" style="color: var(--carbon);">antwerp@atriumforma.studio</a>
+          </p>
+          <div class="studio-hours">Mon — Fri · 9:00 — 18:00 CET</div>
+        </article>
+
+        <article class="studio reveal reveal-d1">
+          <div class="studio-city">Kyoto</div>
+          <p class="studio-address">
+            Higashiyama-ku, Hanami-koji 12<br>
+            Kyoto 605-0825<br>
+            Japan
+          </p>
+          <p class="studio-contact">
+            +81 75 555 0148<br>
+            <a href="mailto:kyoto@atriumforma.studio" style="color: var(--carbon);">kyoto@atriumforma.studio</a>
+          </p>
+          <div class="studio-hours">Mon — Fri · 9:30 — 18:30 JST</div>
+        </article>
+      </div>
+
+      <p style="margin-top: 32px; color: var(--ink-soft); font-size: 0.9375rem; max-width: 56ch;">
+        Press inquiries: <a href="mailto:press@atriumforma.studio" style="color: var(--carbon);">press@atriumforma.studio</a> · we respond within seven working days. Studio visits are by appointment only and confirmed by Marieke.
+      </p>
+    </section>
+
+    <!-- COMMISSIONS -->
+    <section class="container">
+      <div class="commission">
+        <div class="label">
+          <span class="label-mono reveal">A commission inquiry</span>
+        </div>
+        <div class="commission-form reveal reveal-d1">
+          <h3 style="margin-bottom: 16px;">Begin with an unhurried first letter.</h3>
+          <p style="color: var(--ink-soft); margin-bottom: 32px; max-width: 50ch;">We accept three new commissions a year, mostly civic and cultural buildings. If you are considering us for a project, the form below sets the start. We reply within seven working days by post, on the studio's letterhead.</p>
+
+          <form class="form-group" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="firstname">Given name</label>
+                <input id="firstname" name="firstname" type="text" autocomplete="given-name" required />
+              </div>
+              <div class="form-field">
+                <label for="lastname">Family name</label>
+                <input id="lastname" name="lastname" type="text" autocomplete="family-name" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="organization">Organization (if applicable)</label>
+              <input id="organization" name="organization" type="text" autocomplete="organization" />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="type">Project type</label>
+                <select id="type" name="type">
+                  <option>Library</option>
+                  <option>Chapel</option>
+                  <option>Museum</option>
+                  <option>School</option>
+                  <option>Cultural · other</option>
+                  <option>Private · cultural use only</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="region">Region</label>
+                <select id="region" name="region">
+                  <option>Belgium / Netherlands</option>
+                  <option>Germany / Switzerland</option>
+                  <option>France</option>
+                  <option>Other Europe</option>
+                  <option>Japan</option>
+                  <option>Other Asia</option>
+                  <option>North America</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="stage">Stage</label>
+                <select id="stage" name="stage">
+                  <option>Preliminary / exploring</option>
+                  <option>Brief written, no architect yet</option>
+                  <option>Architect shortlist underway</option>
+                  <option>Existing project, looking for second opinion</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="budget">Approximate construction budget</label>
+                <select id="budget" name="budget">
+                  <option>Under €1M</option>
+                  <option>€1 — €5M</option>
+                  <option>€5 — €15M</option>
+                  <option>€15M+</option>
+                  <option>Not yet determined</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="brief">The brief, in your own words</label>
+              <textarea id="brief" name="brief" placeholder="What you are building, for whom, on what site, and what you hope it will feel like when it opens."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send the letter <span class="arrow">→</span></button>
+            <p style="color: var(--hairline); font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 16px;">Reply within 7 working days · by post or email</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-mark">Atrium<br><span class="em">Forma</span></div>
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="brand" style="color: var(--paper);">Atrium Forma <small>Antwerp · Kyoto</small></a>
+          <p style="margin-top: 12px; max-width: 36ch;">An eleven-person architecture studio.</p>
+        </div>
+        <div><h5>Studios</h5><ul><li>Antwerp · Lange Gasthuisstraat 4</li><li>Kyoto · Higashiyama-ku 12</li></ul></div>
+        <div><h5>Pages</h5><ul><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h5>Awards</h5><ul><li>Mies v. d. Rohe · finalist 2024</li><li>Belgian Building Award · 2022</li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Atrium Forma bvba · Antwerp.</span>
+        <span>Built quiet.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

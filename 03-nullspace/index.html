@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nullspace — Observability for AI agents</title>
+  <meta name="description" content="Runtime intelligence for agentic AI. Trace every prompt, every tool call, every token. Built for platform engineering teams running LLM agents in production." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark"></span>nullspace</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" class="active">Home</a>
+        <a href="platform.html">Platform</a>
+        <a href="about.html">Manifesto</a>
+        <a href="contact.html">Book demo</a>
+      </nav>
+      <a href="contact.html" class="nav-cta">Start trace →</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO with Three.js network -->
+    <section class="hero">
+      <div class="hero-canvas" id="hero-canvas" aria-hidden="true"></div>
+      <div class="container">
+        <span class="hero-tag reveal"><span class="pill">v0.8</span> shipping multi-agent traces today</span>
+        <h1 class="reveal reveal-d1">
+          <span class="gradient-text">Where your agents</span><br>
+          go to think.
+        </h1>
+        <p class="lead reveal reveal-d2">Runtime intelligence for production AI. Trace every prompt, tool call, retry, and token across every agent. Find the silent failures before your users do.</p>
+        <div class="hero-actions reveal reveal-d3">
+          <a href="contact.html" class="btn btn-primary">Book a 30-min demo <span class="arrow">→</span></a>
+          <a href="platform.html" class="btn btn-ghost btn-mono">$ npm i @nullspace/trace</a>
+        </div>
+
+        <div class="code-block reveal reveal-d3">
+          <div class="code-head">
+            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
+            <span class="code-title">trace.ts — 12 lines · attaches to any agent</span>
+          </div>
+          <pre class="code-body"><span class="k">import</span> { trace } <span class="k">from</span> <span class="s">'@nullspace/trace'</span>;
+
+<span class="c">// one line — every prompt, tool call, retry is captured</span>
+<span class="k">const</span> <span class="v">agent</span> = trace(<span class="v">myAgent</span>, { project: <span class="s">'support-bot'</span> });
+
+<span class="k">await</span> <span class="v">agent</span>.run(<span class="s">"Refund my order from Tuesday"</span>);
+
+<span class="c">// → 14 spans, 1.2s, $0.043, 0 silent retries</span>
+<span class="c">// → opened in dashboard:</span>
+<span class="c">//   <span class="n">https://nullspace.dev/t/0x7f3a..b21d</span></span></pre>
+        </div>
+
+        <div class="hero-logos reveal">
+          <div class="hero-logos-label">Trusted by teams shipping agents at</div>
+          <div class="logos-row">
+            <div class="logo-item">// Vercel</div>
+            <div class="logo-item">/* Linear */</div>
+            <div class="logo-item">{Notion}</div>
+            <div class="logo-item">≪Anthropic≫</div>
+            <div class="logo-item">Replit&gt;_</div>
+            <div class="logo-item">[Cursor]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="section container">
+      <div class="section-head reveal">
+        <span class="overline">The problem</span>
+        <h2>AI agents are <em style="color:var(--magenta); font-style: normal;">black boxes</em>.<br>Production AI demands they aren't.</h2>
+        <p class="lead" style="margin-top:24px;">When a tool call silently fails on retry 3 of 5, when a prompt drifts after a model update, when a single user request burns $4 in tokens — your stack traces are blank. We fix that.</p>
+      </div>
+
+      <div class="features">
+        <article class="feature reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v4H4zM4 14h16v4H4zM4 9h16M8 4v14M16 4v14"/></svg>
+          </div>
+          <h3>Span-level traces</h3>
+          <p>Every prompt, every tool call, every token — captured as a flame graph. Click into the 18th of 23 LLM calls in a single conversation.</p>
+        </article>
+        <article class="feature reveal reveal-d1">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h3>Prompt diff &amp; drift</h3>
+          <p>When the same prompt produces different outputs across model updates, we surface the diff. Replay any historical run against the new model.</p>
+        </article>
+        <article class="feature reveal reveal-d2">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <h3>Silent retry alerts</h3>
+          <p>Detect when an agent retried a tool call seven times before giving up. Page on regressions in p99 latency, cost-per-task, or success rate.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <h3>Conversation replay</h3>
+          <p>Re-run any failed conversation with new instructions, new tools, or a new model. Step through the agent's decisions in slow motion.</p>
+        </article>
+        <article class="feature reveal reveal-d1">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6"/></svg>
+          </div>
+          <h3>Multi-agent topology</h3>
+          <p>Visualize routing across orchestrators, supervisors, and sub-agents. See which node burned tokens, which timed out, which decided.</p>
+        </article>
+        <article class="feature reveal reveal-d2">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l3 3 5-7"/></svg>
+          </div>
+          <h3>Eval as a primitive</h3>
+          <p>Run pinned evaluation suites against every commit. Block deploys when a regression on your golden set crosses your threshold.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRODUCT PREVIEW -->
+    <section class="section container">
+      <div class="section-head reveal">
+        <span class="overline">The dashboard</span>
+        <h2>What you actually look at every morning.</h2>
+      </div>
+
+      <div class="product-preview reveal">
+        <div class="preview-head">
+          <div class="preview-tabs">
+            <span class="preview-tab active">Overview</span>
+            <span class="preview-tab">Traces</span>
+            <span class="preview-tab">Evals</span>
+            <span class="preview-tab">Costs</span>
+          </div>
+          <div class="mono" style="font-size: 0.75rem; color: var(--text-faint);">support-bot · production · 24h</div>
+        </div>
+
+        <div class="preview-grid">
+          <div class="stat-card">
+            <div class="stat-label">Traces / hour</div>
+            <div class="stat-num">12.4k</div>
+            <div class="stat-trend">▲ 8.2%</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">p99 latency</div>
+            <div class="stat-num">2.41s</div>
+            <div class="stat-trend down">▼ 14.0%</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Avg cost / task</div>
+            <div class="stat-num">$0.043</div>
+            <div class="stat-trend">▲ 3.1%</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Silent retries</div>
+            <div class="stat-num">17</div>
+            <div class="stat-trend down">▼ 64%</div>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="chart-title">success_rate.last_24h · 98.4%</div>
+          <svg class="chart-svg" viewBox="0 0 600 150" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="chart-grad" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#00F5A0" />
+                <stop offset="100%" stop-color="#00F5A0" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            <path class="chart-fill" d="M0,80 C50,60 100,90 150,70 C200,50 250,100 300,65 C350,30 400,80 450,55 C500,30 550,50 600,40 L600,150 L0,150 Z" />
+            <path class="chart-line" d="M0,80 C50,60 100,90 150,70 C200,50 250,100 300,65 C350,30 400,80 450,55 C500,30 550,50 600,40" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTEGRATIONS -->
+    <section class="section container">
+      <div class="section-head reveal">
+        <span class="overline">Integrations</span>
+        <h2>Works with the stack you already have.</h2>
+        <p class="lead" style="margin-top:24px;">Drop-in SDKs for every major agent framework and model provider. No vendor lock-in — your traces are yours, exportable to OTLP at any time.</p>
+      </div>
+      <div class="integrations">
+        <div class="integration reveal"><div class="integration-name">OpenAI</div></div>
+        <div class="integration reveal reveal-d1"><div class="integration-name">Anthropic</div></div>
+        <div class="integration reveal reveal-d2"><div class="integration-name">LangGraph</div></div>
+        <div class="integration reveal"><div class="integration-name">LlamaIndex</div></div>
+        <div class="integration reveal reveal-d1"><div class="integration-name">CrewAI</div></div>
+        <div class="integration reveal reveal-d2"><div class="integration-name">Vercel AI</div></div>
+        <div class="integration reveal"><div class="integration-name">Bedrock</div></div>
+        <div class="integration reveal reveal-d1"><div class="integration-name">Mistral</div></div>
+        <div class="integration reveal reveal-d2"><div class="integration-name">Together</div></div>
+        <div class="integration reveal"><div class="integration-name">Datadog</div></div>
+        <div class="integration reveal reveal-d1"><div class="integration-name">Slack</div></div>
+        <div class="integration reveal reveal-d2"><div class="integration-name">PagerDuty</div></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section container">
+      <div class="cta-band reveal">
+        <span class="overline" style="justify-content: center;">Get started</span>
+        <h2 class="gradient-text">Ship the agent. We'll watch the lights.</h2>
+        <p>Two-week trial, no credit card. Drop one import into your agent, see your first trace in 90 seconds.</p>
+        <a href="contact.html" class="btn btn-primary">Book a demo <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand"><span class="brand-mark"></span>nullspace</div>
+          <p style="color: var(--text-muted); margin-top: 12px; max-width: 32ch; font-size: 0.9375rem;">Runtime intelligence for agentic AI. Made in Brooklyn &amp; Lisbon.</p>
+        </div>
+        <div>
+          <h5>Product</h5>
+          <ul>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="platform.html">Pricing</a></li>
+            <li>Changelog</li>
+            <li>Status</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Developers</h5>
+          <ul>
+            <li>Docs</li>
+            <li>SDK reference</li>
+            <li>OTLP exporter</li>
+            <li>GitHub</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">Manifesto</a></li>
+            <li>Careers · 6</li>
+            <li>Security</li>
+            <li>Press</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="contact.html">Book a demo</a></li>
+            <li>hi@nullspace.dev</li>
+            <li>Twitter / X</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <span>© <span id="year"></span> Nullspace Labs Inc.</span>
+        <span>SOC 2 Type II · ISO 27001 in progress</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

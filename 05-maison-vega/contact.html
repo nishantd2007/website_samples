@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boutiques &amp; Appointment — Maison Vega</title>
+  <meta name="description" content="Request an appointment at the Milan atelier, Paris or New York boutique. The list is small, by design." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-links-left">
+        <a href="collection.html">Aurum AW26</a>
+        <a href="atelier.html">Atelier</a>
+      </div>
+      <a href="index.html" class="brand">
+        Maison Vega
+        <small>Milano · Paris · est. 1948</small>
+      </a>
+      <div class="nav-links-right">
+        <a href="contact.html" class="active">Boutiques</a>
+        <a href="contact.html">Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero container">
+      <span class="overline overline-gold reveal">Boutiques &amp; appointment</span>
+      <h1 class="reveal reveal-d1" style="margin-top: 24px;">Four <span class="italic" style="color: var(--gold-deep);">houses,</span> by appointment.</h1>
+      <p class="lead serif reveal reveal-d2" style="margin: 24px auto 0; max-width: 50ch;">Aurum AW26 is shown privately at the Milan atelier and the Paris and New York boutiques. Tokyo is by invitation, in the home of our local representative.</p>
+    </section>
+
+    <section class="container">
+      <div class="boutiques">
+        <article class="boutique reveal">
+          <div class="boutique-city italic">Milano</div>
+          <div class="boutique-address">
+            Via Verri 11, 20121<br>
+            Milano · Italia<br>
+            +39 02 555 0148
+          </div>
+          <div class="boutique-hours">Mon — Sat · By appointment</div>
+        </article>
+        <article class="boutique reveal reveal-d1">
+          <div class="boutique-city italic">Paris</div>
+          <div class="boutique-address">
+            22 Rue Saint-Honoré, 75001<br>
+            Paris · France<br>
+            +33 1 55 55 0148
+          </div>
+          <div class="boutique-hours">Tue — Sat · 11h — 19h</div>
+        </article>
+        <article class="boutique reveal reveal-d2">
+          <div class="boutique-city italic">New York</div>
+          <div class="boutique-address">
+            27 Crosby Street<br>
+            New York · 10013<br>
+            +1 212 555 0148
+          </div>
+          <div class="boutique-hours">Wed — Sat · 11am — 6pm</div>
+        </article>
+        <article class="boutique reveal reveal-d3">
+          <div class="boutique-city italic">Tokyo</div>
+          <div class="boutique-address">
+            Aoyama, 5-chōme<br>
+            Minato-ku · Tokyo<br>
+            By invitation only
+          </div>
+          <div class="boutique-hours">Invitation · seasonal</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- APPOINTMENT -->
+    <section class="appointment">
+      <div class="appointment-grid">
+        <div>
+          <span class="overline overline-cream reveal" style="color: var(--gold-soft);">Request an appointment</span>
+          <h2 class="reveal reveal-d1" style="margin-top: 16px;">A quiet hour, with <span class="italic" style="color: var(--gold-soft);">tea</span>, and the collection.</h2>
+          <p class="lead reveal reveal-d2" style="margin-top: 24px;">Appointments are 60 minutes. You'll meet with one of our atelier directors, see the pieces in person, and have the chance to discuss a custom commission if you'd like to.</p>
+          <p style="margin-top: 24px; color: rgba(241, 236, 227, 0.6); font-size: 0.875rem;">For press inquiries, please write to stampa@maisonvega.com — we'll respond within three working days.</p>
+        </div>
+
+        <form class="form-group reveal reveal-d1" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="firstname">First name</label>
+              <input id="firstname" name="firstname" type="text" autocomplete="given-name" required />
+            </div>
+            <div class="form-field">
+              <label for="lastname">Last name</label>
+              <input id="lastname" name="lastname" type="text" autocomplete="family-name" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="boutique">Preferred location</label>
+              <select id="boutique" name="boutique">
+                <option>Milano · Atelier</option>
+                <option>Paris</option>
+                <option>New York</option>
+                <option>Other / discuss</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="month">Preferred month</label>
+              <select id="month" name="month">
+                <option>October 2026</option>
+                <option>November 2026</option>
+                <option>December 2026</option>
+                <option>January 2027</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="notes">Anything we should know</label>
+            <textarea id="notes" name="notes" placeholder="Pieces you're hoping to see, a commission you have in mind, languages you'd like the appointment in."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold">Request the hour <span class="arrow">→</span></button>
+          <p style="color: rgba(241, 236, 227, 0.4); font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 16px;">A director will reply within 48 hours · in your language</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-mark">Maison <span class="em">Vega</span></div>
+      <div class="footer-top">
+        <div><h5>The maison</h5><p style="max-width: 36ch;">Founded 1948, Milano. Independent since then.</p></div>
+        <div><h5>Houses</h5><ul><li>Atelier · Milano</li><li>Boutique · Paris</li><li>Boutique · New York</li><li>By appointment · Tokyo</li></ul></div>
+        <div><h5>Pages</h5><ul><li><a href="collection.html">Aurum AW26</a></li><li><a href="atelier.html">Atelier</a></li><li><a href="contact.html">Boutiques</a></li></ul></div>
+        <div><h5>Contact</h5><ul><li>+39 02 555 0148</li><li>casa@maisonvega.com</li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Maison Vega srl. Tutti i diritti riservati.</span>
+        <span>Independent · 1948 — Forever</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

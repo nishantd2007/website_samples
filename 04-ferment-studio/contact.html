@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brief us — Ferment Studio</title>
+  <meta name="description" content="Send Ferment Studio your brief. We read every one and reply within 48 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Sans:opsz,wght@9..40,300..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark"></span>Ferment Studio<sup style="font-size: 0.5em; font-weight: 500;">®</sup></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Studio</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">Manifesto</a>
+        <a href="contact.html" class="active">Brief us</a>
+      </nav>
+      <a href="contact.html" class="nav-cta">Start a project ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero container">
+      <span class="overline reveal">Brief us</span>
+      <h1 class="about-display reveal reveal-d1" style="margin-top: 16px; font-size: clamp(2.75rem, 9vw, 9rem);">
+        Tell us about<br>
+        the <span class="em">brand</span><br>
+        you’re building.
+      </h1>
+    </section>
+
+    <section class="container" style="padding-bottom: clamp(48px, 8vw, 120px);">
+      <div class="contact-grid">
+        <!-- Left -->
+        <div class="contact-side reveal">
+          <div>
+            <h3>How this works.</h3>
+            <p>Send the brief. We read every one — usually within 48 hours. If there's a fit, we book a 30-minute call. If not, we tell you why and refer you to someone we'd send our friends to.</p>
+          </div>
+          <div>
+            <h3>What we want to know.</h3>
+            <p>Who you are. What you're making. Why now. Budget if you have a number. Timeline if you have one. The rougher the better.</p>
+          </div>
+          <div>
+            <h3>What we don't.</h3>
+            <p>NDAs before a first conversation. Spec work. A six-stakeholder kickoff. A "fit assessment quiz." Three reference checks before a call.</p>
+          </div>
+          <div>
+            <h3>Studio.</h3>
+            <p>2208 E Cesar Chavez<br>Austin TX 78702</p>
+            <p style="margin-top: 12px;">hello@ferment.studio<br>+1 512 555 0177</p>
+          </div>
+        </div>
+
+        <!-- Right: brief -->
+        <div class="brief reveal reveal-d1">
+          <h3>The brief.</h3>
+          <p style="color: var(--muted); margin-bottom: 28px; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem;">// every field optional except email. the more, the better.</p>
+
+          <form class="form-group" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="firstname">Your name</label>
+                <input id="firstname" name="firstname" type="text" autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="brand">Brand or company name</label>
+              <input id="brand" name="brand" type="text" placeholder="What is it called (or what should it be)?" />
+            </div>
+
+            <div class="form-field">
+              <label for="category">Category</label>
+              <select id="category" name="category">
+                <option>F&amp;B / CPG</option>
+                <option>Tech / SaaS</option>
+                <option>Hospitality</option>
+                <option>Fashion / DTC</option>
+                <option>Fintech</option>
+                <option>Wellness / Beauty</option>
+                <option>Other (you'll tell us)</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="stage">Stage</label>
+              <select id="stage" name="stage">
+                <option>Pre-launch</option>
+                <option>Recently launched (&lt;12 months)</option>
+                <option>Established, needs a refresh</option>
+                <option>Spinning out / sub-brand</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label>Budget (rough is fine)</label>
+              <div class="budget-options">
+                <label class="budget-pill"><input type="radio" name="budget" /> &lt; $30K</label>
+                <label class="budget-pill"><input type="radio" name="budget" defaultChecked /> $30 – 75K</label>
+                <label class="budget-pill"><input type="radio" name="budget" /> $75 – 150K</label>
+                <label class="budget-pill"><input type="radio" name="budget" /> $150K+</label>
+                <label class="budget-pill"><input type="radio" name="budget" /> Don't know yet</label>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="story">Tell us the story.</label>
+              <textarea id="story" name="story" placeholder="What are you making? Why now? What's broken about how everyone else is doing it? What's the dream version of this in 18 months?" style="min-height: 180px;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top: 12px;">Send the brief <span class="arrow">↗</span></button>
+            <p style="color: var(--muted); font-size: 0.8125rem; font-family: 'JetBrains Mono', monospace; margin-top: 12px;">// no auto-responder. a human will reply within 48 hours.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="brand"><span class="brand-mark"></span>Ferment Studio<sup style="font-size: 0.5em; font-weight: 500;">®</sup></div>
+          <p style="margin-top: 12px; max-width: 32ch;">An independent brand &amp; growth studio. We build identities, names, packaging, and the launch campaigns that go with them.</p>
+        </div>
+        <div><h5>Studio</h5><ul><li>2208 E Cesar Chavez</li><li>Austin TX 78702</li><li>hello@ferment.studio</li></ul></div>
+        <div><h5>Pages</h5><ul><li><a href="work.html">Work</a></li><li><a href="about.html">Manifesto</a></li><li><a href="contact.html">Brief us</a></li></ul></div>
+        <div><h5>Press</h5><ul><li>It’s Nice That</li><li>The Brand Identity</li><li>Brand New</li><li>Fonts In Use</li></ul></div>
+      </div>
+      <div class="display-mark">FERMENT</div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Ferment Studio LLC. Loud since 2021.</span>
+        <span>Designed in Austin. Built badly on purpose, in places.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

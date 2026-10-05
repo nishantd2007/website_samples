@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wanderlight — Travel that takes its time</title>
+  <meta name="description" content="A travel collective designing slow, immersive 14–30 day expeditions for travelers who want to inhabit a place, not see it." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark"></span>Wanderlight</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" class="active">Home</a>
+        <a href="trips.html">Trips</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Inquire</a>
+      </nav>
+      <a href="contact.html" class="nav-cta">Book a trip</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div id="hero-canvas" class="hero-canvas" aria-hidden="true"></div>
+
+      <div class="hero-grid">
+        <div>
+          <span class="hero-tag"><span class="pill">2027 cohort</span> Booking now · 4 trips left</span>
+          <h1 class="hero-display">Travel that <span class="em italic">takes</span> its time.</h1>
+          <p class="lead">A small collective of expedition designers, anthropologists, and chefs running fourteen to thirty-day journeys across nine regions. Eighteen trips a year. Eight travelers each.</p>
+          <div class="hero-actions">
+            <a href="trips.html" class="btn btn-primary">See the 2027 trips <span class="arrow">→</span></a>
+            <a href="about.html" class="btn btn-ghost">Our philosophy</a>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num"><span class="italic">9</span></div>
+              <div class="hero-stat-label">regions · across five continents</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">18<span class="italic">/yr</span></div>
+              <div class="hero-stat-label">trips · capped at eight travelers each</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">24<span class="italic">d</span></div>
+              <div class="hero-stat-label">average duration · slow on purpose</div>
+            </div>
+          </div>
+        </div>
+        <div><!-- Three.js globe lives here, behind --></div>
+      </div>
+    </section>
+
+    <!-- REGIONS STRIP -->
+    <div class="regions-strip">
+      <div class="container">
+        <div class="regions-label">We design trips across</div>
+        <div class="regions-row">
+          <span>Himalayas</span>
+          <span>The Andes</span>
+          <span>Japan</span>
+          <span>East Africa</span>
+          <span>Iceland</span>
+          <span>Egypt</span>
+          <span>Mexico</span>
+          <span>Italy</span>
+          <span>Patagonia</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRIPS PREVIEW -->
+    <section class="section container">
+      <div class="trips-head">
+        <div>
+          <span class="overline reveal">From the 2027 catalog</span>
+          <h2 class="reveal reveal-d1" style="margin-top: 16px;">Three journeys we are <span class="em">unreasonably</span> excited about.</h2>
+        </div>
+        <p class="lead reveal reveal-d2">Each trip is led by a regional expert who lives there, paired with a Wanderlight host who travels every step with you.</p>
+      </div>
+
+      <div class="trips-grid">
+        <article class="trip-card reveal">
+          <div class="trip-image">
+            <span class="trip-tag">14 days · May 2027</span>
+            <img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=900&q=85" alt="Himalayan ridgeline at golden hour, prayer flags visible" />
+          </div>
+          <div class="trip-details">
+            <span class="trip-region">Himalayas · Nepal</span>
+            <h3 class="trip-name">Above the cloud line.</h3>
+            <p style="color: rgba(255,247,235,0.75); font-size: 0.9375rem; margin-bottom: 8px;">A walking trip through the high villages of the Solu-Khumbu, with three nights in a 1947 monastery.</p>
+            <div class="trip-meta">
+              <span>8 travelers · 14 days</span>
+              <span class="trip-price">From $9,800</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="trip-card reveal reveal-d1">
+          <div class="trip-image">
+            <span class="trip-tag">21 days · Sept 2027</span>
+            <img src="https://images.unsplash.com/photo-1531065208531-4036c0dba3ca?auto=format&fit=crop&w=900&q=85" alt="Andean village above a deep valley, golden afternoon light" />
+          </div>
+          <div class="trip-details">
+            <span class="trip-region">The Andes · Peru</span>
+            <h3 class="trip-name">A textile road through the Andes.</h3>
+            <p style="color: rgba(255,247,235,0.75); font-size: 0.9375rem; margin-bottom: 8px;">From Cusco through three weaving villages to a private viewing of the Q'eswachaka rope bridge ceremony.</p>
+            <div class="trip-meta">
+              <span>8 travelers · 21 days</span>
+              <span class="trip-price">From $14,200</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="trip-card reveal reveal-d2">
+          <div class="trip-image">
+            <span class="trip-tag">17 days · Nov 2027</span>
+            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=900&q=85" alt="Misty mountain town in Japan with traditional architecture" />
+          </div>
+          <div class="trip-details">
+            <span class="trip-region">Japan · Kii Peninsula</span>
+            <h3 class="trip-name">A pilgrim's walk to Kumano.</h3>
+            <p style="color: rgba(255,247,235,0.75); font-size: 0.9375rem; margin-bottom: 8px;">The thousand-year Kumano Kodo route, with nights in cedar-built shukubo, walked unhurried over twelve days.</p>
+            <div class="trip-meta">
+              <span>6 travelers · 17 days</span>
+              <span class="trip-price">From $12,400</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div style="text-align: center; margin-top: 64px;">
+        <a href="trips.html" class="btn btn-ghost reveal">All 18 trips for 2027 <span class="arrow">→</span></a>
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto-section">
+      <div class="container">
+        <div class="manifesto-grid">
+          <p class="manifesto-quote reveal">"You haven't visited a place until you've sat in <span class="em">silence</span> there for a morning."</p>
+          <div class="manifesto-text reveal reveal-d1">
+            <span class="overline">The philosophy</span>
+            <p style="margin-top: 16px;">Most travel today is built around <em style="color: var(--amber);">density</em> — see ten things in three days. Wanderlight is built around the opposite. We move at the pace of a place. We linger. We arrive in a village and stay until people start to know us.</p>
+            <p>Every trip has at least one full day with nothing scheduled. Not because we ran out of ideas — because that is the day you'll remember.</p>
+            <a href="about.html" class="btn btn-ghost" style="margin-top: 24px;">Read the manifesto <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITINERARY SAMPLE -->
+    <section class="section section-light">
+      <div class="container">
+        <div style="max-width: 56ch; margin-bottom: 64px;">
+          <span class="overline reveal">A sample, day by day</span>
+          <h2 class="reveal reveal-d1" style="margin-top: 16px;">What twenty-one days in the <span class="italic" style="color: var(--coral-deep);">Andes</span> actually looks like.</h2>
+        </div>
+
+        <div class="story-line">
+          <div class="story-image reveal">
+            <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=900&q=85" alt="A Peruvian highland weaver at her loom, golden hour" />
+          </div>
+          <div class="story-days">
+            <div class="day reveal">
+              <span class="day-num">Day 01</span>
+              <div>
+                <h4>Cusco, settling.</h4>
+                <p>You arrive. We hand you a bag of coca tea and an instruction to walk no further than five blocks for the first 36 hours. Dinner together at a quiet courtyard table.</p>
+              </div>
+            </div>
+            <div class="day reveal">
+              <span class="day-num">Day 04</span>
+              <div>
+                <h4>Pisac market, before tourists.</h4>
+                <p>We are the first ones there. You meet the weaver who will accompany us for the rest of the trip. She picks the textiles she wants you to understand.</p>
+              </div>
+            </div>
+            <div class="day reveal">
+              <span class="day-num">Day 09</span>
+              <div>
+                <h4>Chinchero village, a slow week.</h4>
+                <p>Seven nights in a single home in a 6,000-foot village. Mornings with the loom. Afternoons walking. One day with nothing scheduled — you find yours.</p>
+              </div>
+            </div>
+            <div class="day reveal">
+              <span class="day-num">Day 16</span>
+              <div>
+                <h4>Q'eswachaka rope bridge.</h4>
+                <p>The annual rebuilding of the last Incan rope bridge — only locals attend. A private viewing arranged through five years of relationships.</p>
+              </div>
+            </div>
+            <div class="day reveal">
+              <span class="day-num">Day 21</span>
+              <div>
+                <h4>Last meal, slow goodbye.</h4>
+                <p>A long lunch in a high-altitude orchard. You leave knowing eleven people's names and having promised three of them you'll write.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="testimonial-section">
+      <div class="container">
+        <p class="testimonial-quote reveal">"I have traveled my entire life. Wanderlight is the first trip I came back from <span class="em italic">changed.</span>"</p>
+        <div class="testimonial-author reveal reveal-d1">
+          <div class="testimonial-avatar">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2307172A'/><text x='50' y='50' font-family='Playfair Display,Georgia,serif' font-style='italic' font-weight='500' font-size='38' fill='%23FFB454' text-anchor='middle' dy='.34em' letter-spacing='-1'>HM</text></svg>" alt="Avatar placeholder — Helen Marchetti (fictional traveler)" />
+          </div>
+          <div style="text-align: left;">
+            <div class="testimonial-name">Helen Marchetti</div>
+            <div class="testimonial-meta">Andes 2025 · Patagonia 2026</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section container" style="text-align: center;">
+      <span class="overline reveal">2027 cohort</span>
+      <h2 class="reveal reveal-d1" style="margin-top: 16px; max-width: 22ch; margin-inline: auto;">Four trips left. <span class="em">Most fill within ten days.</span></h2>
+      <p class="lead reveal reveal-d2" style="margin: 32px auto 40px;">Each trip caps at eight travelers and we accept reservations on a first-conversation basis. The 2028 catalog opens in September.</p>
+      <a href="contact.html" class="btn btn-primary reveal reveal-d3">Begin the inquiry <span class="arrow">→</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-mark italic">Wanderlight.</div>
+
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="brand"><span class="brand-mark"></span>Wanderlight</a>
+          <p style="margin-top: 12px; max-width: 36ch;">A travel collective designing slow, immersive expeditions across nine regions. Founded 2020 in Lisbon. Eight travelers per trip.</p>
+        </div>
+        <div>
+          <h5>Trips</h5>
+          <ul>
+            <li><a href="trips.html">2027 catalog</a></li>
+            <li>2028 (preview)</li>
+            <li>Private commissions</li>
+            <li>Group buyouts</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Studio</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li>Hosts &amp; experts</li>
+            <li>Press · Condé Nast, 2024</li>
+            <li>Journal</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="contact.html">Begin an inquiry</a></li>
+            <li>journey@wanderlight.travel</li>
+            <li>+351 21 555 0148</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Wanderlight Lda. Lisbon · Mexico City · Tokyo.</span>
+        <span>Slow on purpose.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

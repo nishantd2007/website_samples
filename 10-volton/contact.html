@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reserve — Volton</title>
+  <meta name="description" content="Begin a reservation for the Volton One. A $25,000 fully refundable deposit holds your allocation. 28 of 99 vehicles remaining." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark"></span>Volton</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Volton</a>
+        <a href="the-car.html">The Car</a>
+        <a href="about.html">Manifesto</a>
+        <a href="contact.html" class="active">Reserve</a>
+      </nav>
+      <a href="contact.html" class="nav-cta">Reserve · 28 left</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero container">
+      <span class="overline reveal">Reserve · allocation 72 — 99</span>
+      <h1 class="reveal reveal-d1" style="margin-top: 16px;">Twenty-five thousand <span class="em">refundable.</span><br>A Volton One waiting.</h1>
+      <p class="lead reveal reveal-d2" style="margin-top: 24px;">A $25,000 fully refundable deposit holds your allocation in the build queue. Configuration is finalized at a Stuttgart workshop visit with Lina, Ravi, and Anna. Production begins on your vehicle within thirty days of contract signing.</p>
+
+      <div class="allocation-strip reveal reveal-d3">
+        <div class="allocation-text">
+          <span class="allocation-label">Allocation status · live</span>
+          <strong>71 reserved · 28 remaining</strong>
+          <div class="allocation-bar"><div class="allocation-fill"></div></div>
+          <p style="color: var(--text-muted); font-size: 0.8125rem; margin-top: 10px;">First deliveries Q4 2027 · final allocation closes Q1 2026</p>
+        </div>
+        <div class="allocation-count">28<span style="font-size: 1rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;"> / 99</span></div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="configurator-grid">
+        <!-- Left: configurator -->
+        <div class="config-options reveal">
+          <!-- 01 EXTERIOR -->
+          <div class="config-group">
+            <div class="config-group-head">
+              <span class="config-group-num">01 / Exterior</span>
+              <h3>Paint <small>20 coats · hand-flatted ceramic</small></h3>
+            </div>
+            <div class="config-tiles" data-group="exterior">
+              <button type="button" class="config-tile selected" data-name="Carbon" data-sub="Default" data-price="0">
+                <div class="tile-swatch carbon"></div>
+                <div class="tile-name">Carbon</div>
+                <div class="tile-meta"><span class="tile-sub">Default</span><span class="tile-price included">Included</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="Storm" data-sub="Deep slate" data-price="0">
+                <div class="tile-swatch storm"></div>
+                <div class="tile-name">Storm</div>
+                <div class="tile-meta"><span class="tile-sub">Deep slate</span><span class="tile-price included">Included</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="Silver" data-sub="Brushed" data-price="0">
+                <div class="tile-swatch silver"></div>
+                <div class="tile-name">Silver</div>
+                <div class="tile-meta"><span class="tile-sub">Brushed</span><span class="tile-price included">Included</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="Bronze" data-sub="Burnished" data-price="0">
+                <div class="tile-swatch bronze"></div>
+                <div class="tile-name">Bronze</div>
+                <div class="tile-meta"><span class="tile-sub">Burnished</span><span class="tile-price included">Included</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="Voltage" data-sub="Signature" data-price="0">
+                <div class="tile-swatch voltage"></div>
+                <div class="tile-name">Voltage</div>
+                <div class="tile-meta"><span class="tile-sub">Signature</span><span class="tile-price included">Included</span></div>
+              </button>
+            </div>
+          </div>
+
+          <!-- 02 WHEELS -->
+          <div class="config-group">
+            <div class="config-group-head">
+              <span class="config-group-num">02 / Wheels</span>
+              <h3>21" or 22" forged <small>Standard 21" included</small></h3>
+            </div>
+            <div class="config-tiles" data-group="wheels">
+              <button type="button" class="config-tile selected" data-name="21in forged magnesium" data-sub="Standard" data-price="0">
+                <div class="tile-icon">21" Mg</div>
+                <div class="tile-name">21" forged magnesium</div>
+                <div class="tile-meta"><span class="tile-sub">Standard</span><span class="tile-price included">Included</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="21in forged carbon" data-sub="CCM" data-price="24000">
+                <div class="tile-icon">21" CC</div>
+                <div class="tile-name">21" forged carbon</div>
+                <div class="tile-meta"><span class="tile-sub">−4.2 kg / wheel</span><span class="tile-price">+$24,000</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="22in forged titanium" data-sub="Track" data-price="48000">
+                <div class="tile-icon">22" Ti</div>
+                <div class="tile-name">22" forged titanium</div>
+                <div class="tile-meta"><span class="tile-sub">Track-spec</span><span class="tile-price">+$48,000</span></div>
+              </button>
+            </div>
+          </div>
+
+          <!-- 03 INTERIOR -->
+          <div class="config-group">
+            <div class="config-group-head">
+              <span class="config-group-num">03 / Interior</span>
+              <h3>Cabin material <small>Hand-stretched by Anna Schmidt</small></h3>
+            </div>
+            <div class="config-tiles" data-group="interior">
+              <button type="button" class="config-tile selected" data-name="Tuscan saddle" data-sub="Default" data-price="0">
+                <div class="tile-swatch mat-saddle"></div>
+                <div class="tile-name">Tuscan saddle leather</div>
+                <div class="tile-meta"><span class="tile-sub">Default</span><span class="tile-price included">Included</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="Loro Piana wool" data-sub="Boucle" data-price="14000">
+                <div class="tile-swatch mat-wool"></div>
+                <div class="tile-name">Loro Piana wool boucle</div>
+                <div class="tile-meta"><span class="tile-sub">Boucle</span><span class="tile-price">+$14,000</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="Cashmere" data-sub="Brushed" data-price="28000">
+                <div class="tile-swatch mat-cashmere"></div>
+                <div class="tile-name">Cashmere</div>
+                <div class="tile-meta"><span class="tile-sub">Brushed</span><span class="tile-price">+$28,000</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="Bare carbon-twill" data-sub="Exposed" data-price="36000">
+                <div class="tile-swatch mat-carbon"></div>
+                <div class="tile-name">Bare carbon-twill</div>
+                <div class="tile-meta"><span class="tile-sub">Exposed</span><span class="tile-price">+$36,000</span></div>
+              </button>
+            </div>
+          </div>
+
+          <!-- 04 VOICE -->
+          <div class="config-group">
+            <div class="config-group-head">
+              <span class="config-group-num">04 / The Voice</span>
+              <h3>Acoustic sample bank <small>DB4 GT included</small></h3>
+            </div>
+            <div class="config-tiles" data-group="voice">
+              <button type="button" class="config-tile selected" data-name="DB4 GT, 1962" data-sub="Default" data-price="0">
+                <div class="tile-icon">DB4</div>
+                <div class="tile-name">Aston Martin DB4 GT</div>
+                <div class="tile-meta"><span class="tile-sub">1962 · Default</span><span class="tile-price included">Included</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="DB5, 1964" data-sub="GT" data-price="8000">
+                <div class="tile-icon">DB5</div>
+                <div class="tile-name">Aston Martin DB5</div>
+                <div class="tile-meta"><span class="tile-sub">1964 · GT</span><span class="tile-price">+$8,000</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="911 2.7 RS, 1973" data-sub="Flat-six" data-price="12000">
+                <div class="tile-icon">2.7</div>
+                <div class="tile-name">Porsche 911 2.7 RS</div>
+                <div class="tile-meta"><span class="tile-sub">1973 · Flat-six</span><span class="tile-price">+$12,000</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="250 GTO, 1962" data-sub="V12" data-price="28000">
+                <div class="tile-icon">GTO</div>
+                <div class="tile-name">Ferrari 250 GTO</div>
+                <div class="tile-meta"><span class="tile-sub">1962 · V12</span><span class="tile-price">+$28,000</span></div>
+              </button>
+            </div>
+          </div>
+
+          <!-- 05 DELIVERY -->
+          <div class="config-group">
+            <div class="config-group-head">
+              <span class="config-group-num">05 / Delivery</span>
+              <h3>Where you collect <small>Stuttgart pick-up included</small></h3>
+            </div>
+            <div class="config-tiles" data-group="delivery">
+              <button type="button" class="config-tile selected" data-name="Stuttgart workshop" data-sub="Werkstatt" data-price="0">
+                <div class="tile-icon">DE</div>
+                <div class="tile-name">Stuttgart workshop</div>
+                <div class="tile-meta"><span class="tile-sub">Werkstatt</span><span class="tile-price included">Included</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="Zurich showroom" data-sub="Bahnhofstrasse" data-price="2000">
+                <div class="tile-icon">CH</div>
+                <div class="tile-name">Zurich showroom</div>
+                <div class="tile-meta"><span class="tile-sub">Bahnhofstrasse</span><span class="tile-price">+$2,000</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="NYC Tribeca" data-sub="Hudson Sq." data-price="8000">
+                <div class="tile-icon">NYC</div>
+                <div class="tile-name">NYC · Tribeca</div>
+                <div class="tile-meta"><span class="tile-sub">Hudson Sq.</span><span class="tile-price">+$8,000</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="LA Hancock Park" data-sub="Wilshire" data-price="10000">
+                <div class="tile-icon">LA</div>
+                <div class="tile-name">LA · Hancock Park</div>
+                <div class="tile-meta"><span class="tile-sub">Wilshire</span><span class="tile-price">+$10,000</span></div>
+              </button>
+            </div>
+          </div>
+
+          <!-- 06 CONCIERGE -->
+          <div class="config-group">
+            <div class="config-group-head">
+              <span class="config-group-num">06 / Concierge</span>
+              <h3>Owner programme <small>Optional</small></h3>
+            </div>
+            <div class="config-tiles" data-group="concierge">
+              <button type="button" class="config-tile selected" data-name="Standard service" data-sub="Lifetime" data-price="0">
+                <div class="tile-icon">STD</div>
+                <div class="tile-name">Standard service</div>
+                <div class="tile-meta"><span class="tile-sub">Lifetime parts &amp; labour</span><span class="tile-price included">Included</span></div>
+              </button>
+              <button type="button" class="config-tile" data-name="Volton Concierge" data-sub="Owners' programme" data-price="28000">
+                <div class="tile-icon">VC</div>
+                <div class="tile-name">Volton Concierge</div>
+                <div class="tile-meta"><span class="tile-sub">Events · driving · pickup</span><span class="tile-price">+$28,000</span></div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: live summary + compact reservation -->
+        <aside class="config-summary reveal reveal-d1">
+          <div class="summary-card">
+            <div class="summary-head">
+              <h4>Your Volton One</h4>
+              <span class="tag" id="summary-changes">Base spec</span>
+            </div>
+
+            <div class="summary-rows" id="summary-rows">
+              <div class="summary-row included">
+                <span class="label">Volton One <small>Base · GT-99</small></span>
+                <span class="figure">$1,400,000</span>
+              </div>
+              <div class="summary-row included">
+                <span class="label">Exterior <small>Carbon</small></span>
+                <span class="figure">Included</span>
+              </div>
+              <div class="summary-row included">
+                <span class="label">Wheels <small>21" magnesium</small></span>
+                <span class="figure">Included</span>
+              </div>
+              <div class="summary-row included">
+                <span class="label">Interior <small>Tuscan saddle</small></span>
+                <span class="figure">Included</span>
+              </div>
+              <div class="summary-row included">
+                <span class="label">Voice <small>DB4 GT</small></span>
+                <span class="figure">Included</span>
+              </div>
+              <div class="summary-row included">
+                <span class="label">Delivery <small>Stuttgart</small></span>
+                <span class="figure">Included</span>
+              </div>
+              <div class="summary-row included">
+                <span class="label">Concierge <small>Standard</small></span>
+                <span class="figure">Included</span>
+              </div>
+            </div>
+
+            <div class="summary-total" id="summary-total">
+              <span class="label">Total</span>
+              <span class="figure" id="summary-total-figure">$1,400,000</span>
+            </div>
+
+            <div class="summary-note">
+              <span>Refundable $25K deposit</span>
+              <span id="summary-allocation">Allocation 72 / 99</span>
+            </div>
+          </div>
+
+          <!-- Compact reservation form -->
+          <div class="reserve-compact">
+            <h4>Submit allocation request</h4>
+            <p>// configuration above attaches automatically</p>
+            <form novalidate>
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="firstname">Given name</label>
+                    <input id="firstname" name="firstname" type="text" autocomplete="given-name" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="lastname">Family name</label>
+                    <input id="lastname" name="lastname" type="text" autocomplete="family-name" required />
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required />
+                </div>
+                <div class="form-field">
+                  <label for="phone">Telephone</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" />
+                </div>
+                <div class="form-field">
+                  <label for="country">Country of registration</label>
+                  <select id="country" name="country">
+                    <option>Switzerland</option>
+                    <option>Germany</option>
+                    <option>United Kingdom</option>
+                    <option>France</option>
+                    <option>Italy</option>
+                    <option>Monaco</option>
+                    <option>United States</option>
+                    <option>UAE</option>
+                    <option>Singapore</option>
+                    <option>Japan</option>
+                    <option>Other (we'll discuss)</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit allocation request <span class="arrow">→</span></button>
+              </div>
+            </form>
+          </div>
+
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.06em; color: var(--text-faint); line-height: 1.6; padding: 0 var(--space-2);">
+            // no deposit charged until allocation confirmed<br>
+            // configuration can be revised at the Stuttgart visit<br>
+            // direct line · +41 44 555 0148
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-mark">VOLTON</div>
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand"><span class="brand-mark"></span>Volton</a>
+          <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: 12px; max-width: 32ch;">A 99-car limited-edition electric grand tourer.</p>
+        </div>
+        <div><h5>The Car</h5><ul><li><a href="the-car.html">Specification</a></li><li><a href="the-car.html">Powertrain</a></li><li><a href="the-car.html">The Voice</a></li></ul></div>
+        <div><h5>Company</h5><ul><li><a href="about.html">Manifesto</a></li><li>Workshop</li><li>Press</li></ul></div>
+        <div><h5>Showrooms</h5><ul><li>Zurich</li><li>Stuttgart</li><li>NYC · LA</li></ul></div>
+        <div><h5>Reserve</h5><ul><li><a href="contact.html">Begin reservation</a></li><li>reservations@volton.car</li></ul></div>
+      </div>
+      <div class="footer-base">
+        <span>© <span id="year"></span> Volton AG · Zurich, Switzerland.</span>
+        <span>99 / 4 years · Electric, with a soul.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

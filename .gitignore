@@ -1,0 +1,7 @@
+.agents/
+.claude/
+skills-lock.json
+INTERVIEW_NOTES.md
+github-profile-README.md
+node_modules/
+.vercel/

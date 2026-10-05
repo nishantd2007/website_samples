@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Helion Protocol</title>
+  <meta name="description" content="Why Vera Mihailov, Aiden Park, and Yusuf Mansour are building decentralized compute. Team, investors, manifesto." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 28 28" fill="none">
+            <defs>
+              <linearGradient id="brand-grad" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#00FFE0" />
+                <stop offset="50%" stop-color="#FF38B4" />
+                <stop offset="100%" stop-color="#9A3FFF" />
+              </linearGradient>
+            </defs>
+            <path d="M14 2L2 8v12l12 6 12-6V8L14 2z" stroke="url(#brand-grad)" stroke-width="1.5" />
+            <path d="M14 14L8 11v6l6 3" stroke="url(#brand-grad)" stroke-width="1.5" stroke-linejoin="round" />
+            <path d="M14 14l6-3v6l-6 3" stroke="url(#brand-grad)" stroke-width="1.5" stroke-linejoin="round" />
+          </svg>
+        </span>
+        Helion
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="protocol.html">Protocol</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Apply</a>
+      </nav>
+      <a href="contact.html" class="nav-cta">Join testnet</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-hero container">
+      <span class="overline reveal">Manifesto · founded 2023</span>
+      <h1 class="reveal reveal-d1" style="margin-top: 16px;">AI training shouldn't run on <span class="em">three companies'</span> infrastructure.</h1>
+      <p class="lead reveal reveal-d2" style="margin-top: 24px;">We built Helion because three cloud providers cannot remain the chokepoint for the most important computational substrate of this decade. A more permissionless, more economically fair, more geographically distributed alternative was inevitable. We are trying to ship the version of it that doesn't suck.</p>
+    </section>
+
+    <section class="container">
+      <div class="manifesto reveal">
+        <p>In 2022 and 2023, the three of us watched the same thing happen from three different vantage points. Aiden was a senior engineer at CoreWeave during the H100 supply crunch, watching seed-stage AI startups get billed $40,000 a month for compute their model wasn't even using efficiently. Vera was running a Solana validator network and saw the obvious analogy: <strong>compute is becoming the new gas.</strong> Yusuf was at Filecoin building proofs of storage and started asking, in March 2023, why we couldn't prove computation the same way we prove storage.</p>
+        <p>The three of us met in Lisbon in May 2023. The thesis we converged on was straightforward:</p>
+        <p><strong>1. Two-thirds of GPU capacity is sitting idle.</strong> Render farms, research clusters, individual workstations. The combined idle compute is roughly five times AWS's published AI capacity. The market exists. The matching layer does not.</p>
+        <p><strong>2. Verifiable compute is now feasible.</strong> The combination of TEEs (which were exotic in 2018, mainstream in 2023) and zk-SNARKs (which dropped to &lt; 200ms verification in late 2022) makes <em>proof-of-compute</em> a thing you can actually build, not a thing you have to handwave around.</p>
+        <p><strong>3. The economics of cloud compute have to break.</strong> AWS gross margin on AI compute is ~62%. That margin is going to be competed away. We'd rather it be competed away by an open protocol than by a fourth hyperscaler.</p>
+        <p>Helion is what we built. <strong>A custom L1, optimized for compute settlement. zk-verifiable execution inside TEE enclaves. A 70/25/5 economic split, paid in USDC.</strong> The protocol is permissionless to join, permissionless to consume, and audited twice by Trail of Bits.</p>
+        <p>We will not become an AWS replacement next year. We may not even be one in five years. But we believe the <em>idea</em> of a compute substrate that is verifiable, distributed, and economically fair is correct — and we believe enough of the right people are now working on it that the version that wins will be the version with the best engineering and the most honest economic design.</p>
+        <p>We hope that's us. If it isn't, we'll have written enough open-source primitives along the way that the thing that does win will look something like Helion.</p>
+        <p style="color: var(--text); margin-top: 32px; font-family: 'JetBrains Mono', monospace; font-size: 0.9375rem;">— Vera, Aiden, Yusuf · Lisbon, July 2023 · revised October 2025</p>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section container">
+      <div class="section-head reveal">
+        <span class="overline">Founders &amp; core team</span>
+        <h2 style="margin-top: 16px;">Six people. <span class="em">All shipping.</span></h2>
+      </div>
+
+      <div class="team">
+        <article class="member reveal">
+          <div class="member-avatar">VM</div>
+          <div class="member-name">Vera Mihailov</div>
+          <div class="member-role">Co-founder · CEO</div>
+          <div class="member-prev">prev. Solana Labs · core engineer</div>
+        </article>
+        <article class="member reveal reveal-d1">
+          <div class="member-avatar">AP</div>
+          <div class="member-name">Aiden Park</div>
+          <div class="member-role">Co-founder · CTO</div>
+          <div class="member-prev">prev. CoreWeave · senior infra</div>
+        </article>
+        <article class="member reveal reveal-d2">
+          <div class="member-avatar">YM</div>
+          <div class="member-name">Yusuf Mansour</div>
+          <div class="member-role">Co-founder · Cryptography</div>
+          <div class="member-prev">prev. Filecoin · proof systems</div>
+        </article>
+        <article class="member reveal">
+          <div class="member-avatar">LK</div>
+          <div class="member-name">Lina Kovac</div>
+          <div class="member-role">Founding eng · L1 chain</div>
+          <div class="member-prev">prev. Optimism · ex-Berkeley PhD</div>
+        </article>
+        <article class="member reveal reveal-d1">
+          <div class="member-avatar">DM</div>
+          <div class="member-name">Daniel Mori</div>
+          <div class="member-role">Founding eng · SDK</div>
+          <div class="member-prev">prev. Anthropic · ex-Pinecone</div>
+        </article>
+        <article class="member reveal reveal-d2">
+          <div class="member-avatar">RA</div>
+          <div class="member-name">Rana Aboulnour</div>
+          <div class="member-role">Founding eng · TEE / verifier</div>
+          <div class="member-prev">prev. Intel SGX team · IIT Madras</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- INVESTORS -->
+    <section class="section container">
+      <div class="section-head reveal">
+        <span class="overline">Backed by</span>
+        <h2 style="margin-top: 16px;">$28M raised across seed and series A.</h2>
+      </div>
+
+      <div class="investors">
+        <div class="investor reveal">
+          <div class="investor-name">Paradigm</div>
+          <div class="investor-meta">Lead · Series A</div>
+        </div>
+        <div class="investor reveal">
+          <div class="investor-name">a16z crypto</div>
+          <div class="investor-meta">Series A</div>
+        </div>
+        <div class="investor reveal">
+          <div class="investor-name">1confirmation</div>
+          <div class="investor-meta">Seed</div>
+        </div>
+        <div class="investor reveal">
+          <div class="investor-name">Variant Fund</div>
+          <div class="investor-meta">Seed</div>
+        </div>
+        <div class="investor reveal">
+          <div class="investor-name">Robot Ventures</div>
+          <div class="investor-meta">Seed</div>
+        </div>
+      </div>
+
+      <p style="text-align: center; color: var(--text-muted); margin-top: 32px; font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; letter-spacing: 0.06em;">
+        Angels include · Naval Ravikant · Balaji Srinivasan · Vlad Tenev · Anatoly Yakovenko
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="section container">
+      <div class="cta-band reveal">
+        <span class="overline" style="justify-content: center;">Join the protocol</span>
+        <h2 style="margin-top: 16px;">If the manifesto resonates, <span class="em">the SDK will too.</span></h2>
+        <p>Testnet is open by application. Approved within 24 hours. Free compute credits for the first thousand developers.</p>
+        <a href="contact.html" class="btn btn-primary">Apply for testnet <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-mark">HELION</div>
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand"><span class="brand-mark"><svg viewBox="0 0 28 28" fill="none"><defs><linearGradient id="brand-grad-2" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#00FFE0" /><stop offset="50%" stop-color="#FF38B4" /><stop offset="100%" stop-color="#9A3FFF" /></linearGradient></defs><path d="M14 2L2 8v12l12 6 12-6V8L14 2z" stroke="url(#brand-grad-2)" stroke-width="1.5" /></svg></span>Helion</a>
+          <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: 12px; max-width: 32ch;">Decentralized compute for AI training and inference.</p>
+        </div>
+        <div><h5>Protocol</h5><ul><li><a href="protocol.html">Architecture</a></li><li><a href="protocol.html">Tokenomics</a></li><li>Whitepaper · v0.4</li></ul></div>
+        <div><h5>Developers</h5><ul><li>Docs</li><li>SDK reference</li><li>GitHub</li></ul></div>
+        <div><h5>Operators</h5><ul><li><a href="contact.html">Become an operator</a></li><li>Hardware spec</li></ul></div>
+        <div><h5>Community</h5><ul><li><a href="about.html">Manifesto</a></li><li>Discord · 11.4k</li><li>Twitter / X</li></ul></div>
+      </div>
+      <div class="footer-base">
+        <span>© <span id="year"></span> Helion Labs · Cayman Islands.</span>
+        <span>Audited · Trail of Bits, OpenZeppelin · 2025</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
